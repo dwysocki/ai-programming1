@@ -1,5 +1,6 @@
 ---
 title: Lisp Sessions
+layout: default
 ---
 
 # Lisp Sessions
