@@ -1,6 +1,6 @@
 ---
 title: Lisp Sessions
-layout: default
+layout: hack
 ---
 
 # Lisp Sessions
