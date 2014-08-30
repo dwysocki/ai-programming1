@@ -25,7 +25,7 @@ layout: {}
 ---
 [Download]({})
 
-```CommonLisp""".format(args.title, args.layout, args.file)
+```lisp""".format(args.title, args.layout, args.file)
     str2 = "```\n"
 
     print(str1)
