@@ -2,7 +2,7 @@
 title: Introductory Session
 layout: hack
 ---
-[Download](sessions/session1.txt)
+[Download](session1.txt)
 
 ```CommonLisp
 [1]> 15
