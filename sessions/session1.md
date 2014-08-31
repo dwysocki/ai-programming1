@@ -4,7 +4,7 @@ layout: hack
 ---
 [Download](session1.txt)
 
-{% highlight CommonLisp %}
+{% highlight cl %}
 [1]> 15
 15
 [2]> "Common Lisp with Objects"
