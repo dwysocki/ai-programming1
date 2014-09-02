@@ -7,7 +7,8 @@ description: >
   AI Programming I (CSC416).
 logo: site-logo.png
 baseurl: /ai-programming1
-#url: http://dwysocki.github.io/ai-programming1
+url: http://dwysocki.github.io/ai-programming1
+#url: 0.0.0.0:4000/ai-programming1
 
 # Jekyll configuration
 
@@ -21,7 +22,7 @@ gems:
   - jekyll-sitemap
 
 include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+#exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
 
 # Site owner
