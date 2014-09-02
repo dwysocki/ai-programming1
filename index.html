@@ -1,50 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+---
+layout: page
+title: Latest Posts
+excerpt: "A simple and clean responsive Jekyll theme for words and photos."
+---
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>AI Programming I by dwysocki</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>AI Programming I</h1>
-        <h2>AI Programming I (CSC416)</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/dwysocki/ai-programming1/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/dwysocki/ai-programming1/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/dwysocki/ai-programming1" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <p>This is my course page for AI Programming part I (CSC416).</p>
-
-<ul>
-<li><p><a href="notes/ai1-notes">Course Notes</a></p></li>
-<li><p><a href="sessions">Lisp Sessions</a></p></li>
-<li>
-<p><a href="assignments">Assignments</a></p>
-
-<ul>
-<li><a href="assignments/documents">Documents</a></li>
-<li><a href="https://github.com/dwysocki/ai-programming1">Code</a></li>
+<ul class="post-list">
+{% for post in site.posts limit:10 %} 
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
+{% endfor %}
 </ul>
-</li>
-</ul>
-      </section>
-    </div>
-
-    
-  </body>
-</html>

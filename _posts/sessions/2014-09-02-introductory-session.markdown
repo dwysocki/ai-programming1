@@ -1,10 +1,10 @@
 ---
+layout: post
 title: Introductory Session
-layout: hack
 ---
 [Download](session1.txt)
 
-{% highlight cl %}
+```common-lisp
 [1]> 15
 15
 [2]> "Common Lisp with Objects"
@@ -86,4 +86,4 @@ USE-VALUE      :R1      Input a value to be used instead.
 ABORT          :R2      Abort main loop
 Break 1 [29]> :a
 (bye)
-{% endhighlight %}
+```
