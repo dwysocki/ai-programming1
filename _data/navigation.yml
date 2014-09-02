@@ -1,0 +1,13 @@
+# Site navigation links
+
+- title: Notes
+  url: /notes/
+
+- title: Sessions
+  url: /sessions/
+
+- title: Exercises
+  url: /exercises/
+
+- title: Assignments
+  url: /assignments/
