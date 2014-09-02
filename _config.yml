@@ -1,33 +1,12 @@
-# Site wide configuration
-
+# Site settings
 title: AI Programming I
-locale: en_US
+email: dwysocki@oswego.edu
 description: >
   Dan Wysocki's course page for the Fall 2014 section of
   AI Programming I (CSC416).
-logo: site-logo.png
-url: http://dwysocki.github.io/ai-programming1
-baseurl: "/ai-programming1"
-#url: 0.0.0.0:4000/ai-programming1
+baseurl: "/ai-programming1" # the subpath of your site, e.g. /blog/
+url: "http://dwysocki.github.io/ai-programming1/"
+github_username: dwysocki
 
-# Jekyll configuration
-
-permalink:   /:categories/:title/
-markdown:    redcarpet
-highlighter: pygments
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
-  - jekyll-sitemap
-
-include: [".htaccess"]
-#exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
-
-
-# Site owner
-owner:
-  name: Dan Wysocki
-  avatar: bio-photo.jpg
-  email: dwysocki@oswego.edu
-  github: dwysocki
+# Build settings
+markdown: redcarpet
