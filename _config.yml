@@ -6,8 +6,8 @@ description: >
   Dan Wysocki's course page for the Fall 2014 section of
   AI Programming I (CSC416).
 logo: site-logo.png
-baseurl: /ai-programming1
-url: http://dwysocki.github.io/
+baseurl:
+url: http://dwysocki.github.io/ai-programming1/
 
 # Jekyll configuration
 
