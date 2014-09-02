@@ -2,7 +2,7 @@
 layout: post
 title: Introductory Session
 ---
-[Download](session1.txt)
+[Download](/sessions/introductory-session.txt)
 
 ```common-lisp
 [1]> 15
