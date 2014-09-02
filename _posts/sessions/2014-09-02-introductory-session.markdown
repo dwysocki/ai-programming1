@@ -4,7 +4,7 @@ title: "Introductory Session"
 category: sessions
 date: 2014-09-02T18:15:52-04:00
 ---
-[Download](session1.txt)
+[Download](/sessions/introductory-session.txt)
 
 ```common-lisp
 [1]> 15
