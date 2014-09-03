@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Notes"
-author: Dan Wysocki
+author: "Dan Wysocki"
 ---
 
 # Introduction
@@ -49,7 +49,7 @@ for(ever)
 end
 ```
 
-[Opening Lisp Session](/sessions/2014/09/02/introductory-session.html)
+[Introductory Lisp Session](/sessions/2014/08/29/introductory-session.html)
 
 **Constant forms**
 
@@ -87,3 +87,48 @@ A *standard form* is a list which represents a function application in the
 following sense: the first element of the list represents a function; each
 remaining element of the list represents an *unevaluated argument* to that
 function.
+
+*Standard form evaluation* is the following two-step process for evaluating a
+functional form:
+
+1. the argument forms are evaluated
+
+2. the function is applied to the values obtained in the first step
+
+Examples ...
+
+- `+` and `max` are predefined standard forms
+
+- `double` from the
+  [introductory lisp session](/sessions/2014/08/29/introductory-session.html)
+  is a standard form defined by the programmer
+
+**Special forms**
+
+A *special form* is like a standard form, except that one or more of the
+arguments to the function are not evaluated prior to application of the
+function.
+
+Examples ...
+
+- `QUOTE`: `(quote whatever)`, `whatever` is not evaluated
+
+- `SETF`: `(setf symbol object)`, if the first argument is a symbol, it is not
+  evaluated; the second argument is evaluated
+
+- `DEFUN`: `(defun lambda-list sequence-of-forms)`, neither of the two arguments
+  are evaluated prior to applying `defun`
+
+**Simple Numeric List Processing**
+
+Example numeric operators ...
+
+- `+`
+
+- `-`
+
+- `*`
+
+- `/`
+
+[Simple Numeric Session](/sessions/2014/09/03/simple-numeric-session.html)

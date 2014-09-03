@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "First Textbook Assignment"
+title: "Textbook Assignment #1"
 modified:
-categories: exercises
+category: exercises
 excerpt:
 tags: []
 image:
