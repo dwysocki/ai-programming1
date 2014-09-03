@@ -1,8 +1,126 @@
 ---
-title: "Textbook Assignment #1"
+title: "AI Programming (CSC416) - Textbook Assignment #1"
 author: "Dan Wysocki"
 
 output: pdf_document
 ---
 
-# Testing
+What follows is a series of selected questions and answers from Chapter 1 of
+Stephen Lucci's "Artificial Intelligence in the 21st Century". The chapter acts
+as an overview of the history of artificial intelligence, with some brief
+discussion of attempts from the ages before modern computation was possible,
+and many topics which were birthed with the advent of modern computing.
+Accordingly, these questions act as an overview of those topics, and provide
+some further insight into them.
+
+# Questions for discussion
+
+2. Distinguish between strong and weak AI.
+
+Strong AI is characterized by reproducing natural intelligences, namely:
+humans. Weak AI, on the other hand, is less concerned with mimicking existing
+intelligences, and instead focuses on producing results that are
+traditionally viewed as requiring intelligence to obtain.
+
+4. What was Alan Turing's significant contribution to Artificial Intelligence.
+
+The obvious answer to this question is the Turing Test, a method he invented
+for judging whether something is intelligent or not. However, his biggest
+contribution to AI, and society as a whole, was his invention of the
+Turing Machine, which is the foundation for the Von Neumann Machine, the
+basis of all modern computer processors.
+
+5. What did John McCarthy contribute to Artificial Intelligence?
+
+McCarthy was the first person to implement the Lambda Calculus through the
+programming language `LISP`. `LISP` and its many dialects have been heavily
+utilized in the design and production of AI systems, especially in the 1980's.
+
+7. Why is medical diagnosis a very typical and suitable domain for AI research?
+
+Medical diagnoses can be seen as a decision based upon a set of conditions.
+A doctor can be very proficient in making decisions based on past medical
+knowledge, but a doctor is only human and therefore cannot consider the
+whole of their knowledge at once, and is subject to human biases.
+A sufficiently powerful AI can weigh the whole of its knowledge, and draw
+upon the optimal solution given that knowledge, and even draw confidence
+statistics.
+
+8. Why have two-person games been a very suitable domain of study for AI?
+
+Games in general have been a good medium for AI research, because they
+involve many of the same challenges encountered in the real world, without
+any of the consequences. Single-player games are fairly easy to solve,
+because there are presumably no unpredictable factors that come into play,
+and the AI can focus on the optimal solution. Two-person games, on the other
+hand, involve a constant weighing of benefits to oneself, and detriments to
+the competitor, and thus provide greater challenge, and more real world
+applications.
+
+
+# Exercises
+
+1. A variation of the Turing test is the so-called Inverted Turing test; in this
+   test, a computer must determine whether it is dealing with a person or
+   another computer. Can you envision any practical applications for this
+   version of the Turing test?
+
+One common implementation of the Inverted Turing test today is the
+`CAPTCHA` and `reCAPTCHA` systems. In such systems, a human must pass a test
+which a computer would not be able to pass. In its current form, the test is
+very simple, and solvable by computers, but with innovations there may be
+better systems put forth in the future.
+
+4. Consider the following tests for a city to be considered a great city:
+
+   - It should be possible to obtain a steak dinner at 3:00 a.m.
+
+   - A classical music concert should be scheduled somewhere within the city
+     bounds each evening.
+
+   - A major sporting event should be scheduled each evening.
+
+    Further, suppose a small town somewhere in America determines that they want
+    to pass this test. To do so, they open a 24-hour steak joint and purchase a
+    symphony orchestra and major sports franchise. Do you feel that this town
+    passes our litmus test for being a great city? Relate this discussion to the
+    criteria for passing the original Turing test and the possession of
+    intelligence.
+
+The small town may pass the great city test, but it did so by making passing
+the test a conscious goal, and completing those goals in an un-natural way.
+In doing so, it passed the test, but failed the *spirit* of the test. A great
+city would presumably meet these three criteria unintentionally, as they are
+merely a by-product of being great. The same goes for the Turing test. By being
+an intelligent being, one would presumably be able to pass the test
+(by a very narrow definition of intelligence). The *spirit* of the test is to
+measure intelligence, but it is possible to pass it while violating this
+spirit, as in the lookup-table solution.
+
+8. Suggest a heuristic that would help to hail a taxi on a visit to New York
+   City (or any other major city) during rush hour when taxis are scarce.
+
+One heuristic would be to walk towards locations which people are constantly
+coming and going from (e.g. shopping centers, landmarks, and subway stations),
+and are therefore more appealing for a taxi to look for passengers in. Another
+would be to frequently shout "taxi" and whistle.
+
+9. What heuristic do lions employ as they pursue their prey?
+
+Lions follow the heuristic of "move slowly and quietly so long as your prey has
+not seen you" and "chase and kill your prey as fast as you can after or just
+before being seen".
+
+12. Suppose that at some time in the future, NASA plans an unmanned mission to
+    Europa, a moon of the planet Jupiter. Suppose that at the time of launch our
+    understanding of this moon's surface is scant. Suggest advantages to sending
+    an "army" of Rodney Brooks-insect-type robots rather than one or two more
+    substantial machines.
+
+Europa's surface is unlike the surface of any other known celestial body, as it
+is comprised entirely of ice floating atop a vast, moon-wide ocean. There may be
+unforseen hazards in navigating such a surface, which would be better discovered
+by losing one of many robots, rather than losing one of several. An army of
+small robots also has the advantage of being able to cover a wider area by
+splitting up, fitting into smaller areas due to their size, and possibly
+standing atop ice which would collapse beneath a heavier machine.
