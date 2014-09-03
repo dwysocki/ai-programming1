@@ -49,7 +49,8 @@ for(ever)
 end
 ```
 
-[Introductory Lisp Session](/sessions/2014/08/29/introductory-session.html)
+[Introductory Lisp Session](
+    /ai-programming1/sessions/2014/08/29/introductory-session.html)
 
 **Constant forms**
 
@@ -100,7 +101,8 @@ Examples ...
 - `+` and `max` are predefined standard forms
 
 - `double` from the
-  [introductory lisp session](/sessions/2014/08/29/introductory-session.html)
+  [introductory lisp session](
+      /ai-programming1/sessions/2014/08/29/introductory-session.html)
   is a standard form defined by the programmer
 
 **Special forms**
@@ -131,4 +133,5 @@ Example numeric operators ...
 
 - `/`
 
-[Simple Numeric Session](/sessions/2014/09/03/simple-numeric-session.html)
+[Simple Numeric Session](
+    /ai-programming1/sessions/2014/09/03/simple-numeric-session.html)
