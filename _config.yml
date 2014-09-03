@@ -11,4 +11,4 @@ github_username: dwysocki
 # Build settings
 markdown: redcarpet
 
-exclude: ["/exercises/"]
+exclude: ["*.Rmd"]
