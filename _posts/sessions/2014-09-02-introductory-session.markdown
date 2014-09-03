@@ -2,7 +2,7 @@
 layout: post
 title: "Introductory Session"
 category: sessions
-date: 2014-09-02T18:15:52-04:00
+date: 2014-08-29T09:10:00-04:00
 ---
 [Download](/ai-programming1/sessions/introductory-session.txt)
 
