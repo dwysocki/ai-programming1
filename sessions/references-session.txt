@@ -1,0 +1,29 @@
+[1]> ()
+NIL
+[2]> (setf oo-languages '(simula smalltalk java clos))
+(SIMULA SMALLTALK JAVA CLOS)
+[3]> oo-languages 
+(SIMULA SMALLTALK JAVA CLOS)
+[4]> 'oo-languages 
+OO-LANGUAGES
+[5]> (car oo-languages)
+SIMULA
+[6]> (cdr oo-languages)
+(SMALLTALK JAVA CLOS)
+[7]> (car (cdr oo-languages))
+SMALLTALK
+[8]> (cdr (cdr oo-languages))
+(JAVA CLOS)
+[9]> (cadr oo-languages)
+SMALLTALK
+[10]> (cddr oo-languages)
+(JAVA CLOS)
+[11]> (first oo-languages)
+SIMULA
+[12]> (second oo-languages)
+SMALLTALK
+[13]> (third oo-languages)
+JAVA
+[14]> (nth 2 oo-languages)
+JAVA
+[15]> (bye)

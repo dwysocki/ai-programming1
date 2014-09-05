@@ -135,3 +135,68 @@ Example numeric operators ...
 
 [Simple Numeric Session](
     /ai-programming1/sessions/2014/09/03/simple-numeric-session.html)
+
+# List Processing
+
+**Icons of List Processing in Lisp**
+
+The `CAR` of a nonempty list is the `FIRST` element of the list. Stands for
+"contents of `A` register".
+
+The `CDR` of a nonempty list is the `REST` of the elements of the list.
+Stands for "contents of `D` register".
+
+The `CONS` of an object `O` and a list `L` is the list whose `CAR` is `0` and
+whose `CDR` is `L`.
+
+Abstract Session: featuring `CAR` and `CDR`.
+
+1) What is the `CAR` of `(BLUE RED YELLOW)`?
+
+  - `BLUE`
+
+2) What is the `CDR` of `(BLUE RED YELLOW)`?
+
+  - `(RED YELLOW)`
+
+3) What is the `CAR` of `((1 2) BUCKLE MY SHOE)`?
+
+  - `(1 2)`
+
+4) What is the `CDR` of `((1 2) BUCKLE MY SHOE)`?
+
+  - `(BUCKLE MY SHOE)`
+
+5) What is the `CAR` of `("SUNSHINE")`?
+
+  - `"SUNSHINE"`
+
+6) What is the `CDR` of `("SUNSHINE")`?
+
+  - `()` or `NIL`
+
+Abstract Session: featuring `CONS`.
+
+1) What is the `CONS` of `ESPRESSO` and `(LATTE CAPPUCCINO)`?
+
+  - `(ESPRESSO LATTE CAPPUCCINO)`
+
+2) What is the `CONS` of `(A B C)` and `(1 2 3)`?
+
+  - `((A B C) 1 2 3)`
+
+3) What is the `CONS` of `PETUNIA` and `()`?
+
+  - `(PETUNIA)`
+
+**Referencers and Constructors**
+
+A *referencer* is a form which returns a reference to a part of a given
+structure.
+
+A *constructor* is a form which returns a structure constructed from some
+number of Lisp objects.
+
+*Note: The "icons of list processing" are all you actually need to do list
+       processing in Lisp. The rest are for convenience.*
+
