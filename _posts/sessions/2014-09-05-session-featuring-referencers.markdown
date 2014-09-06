@@ -7,7 +7,7 @@ date: 2014-09-05T10:04:17-04:00
 
 [Download]({{ site.baseurl }}/sessions/referencers-session.txt)
 
-```common-lisp
+```
 [1]> ()
 NIL
 [2]> (setf oo-languages '(simula smalltalk java clos))

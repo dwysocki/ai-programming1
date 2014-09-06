@@ -5,9 +5,9 @@ title: "Session Featuring CAR and CDR"
 date: 2014-09-05T09:46:15-04:00
 ---
 
-[Download](/ai-programming1/sessions/car-cdr-session.txt)
+[Download]({{ site.baseurl }}/sessions/car-cdr-session.txt)
 
-```common-lisp
+```
 [1]> (car (quote (blue red yellow)))
 BLUE
 [2]> (car '(blue red yellow))

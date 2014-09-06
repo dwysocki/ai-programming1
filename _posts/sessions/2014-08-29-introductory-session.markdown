@@ -6,7 +6,7 @@ date: 2014-08-29T09:10:00-04:00
 ---
 [Download]({{ site.baseurl }}/sessions/introductory-session.txt)
 
-```common-lisp
+```
 [1]> 15
 15
 [2]> "Common Lisp with Objects"

@@ -5,9 +5,9 @@ title: "Session Featuring CONS"
 date: 2014-09-05T09:54:41-04:00
 ---
 
-[Download](/ai-programming1/sessions/cons-session.txt)
+[Download]({{ site.baseurl }}/sessions/cons-session.txt)
 
-```common-lisp
+```
 [1]> (cons espresso (latte cappuccino))
 
 *** - SYSTEM::READ-EVAL-PRINT: variable ESPRESSO has no value
