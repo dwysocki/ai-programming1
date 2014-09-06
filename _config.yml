@@ -9,8 +9,8 @@ url: "http://dwysocki.github.io/ai-programming1/"
 github_username: dwysocki
 
 # Build settings
-markdown: KramdownPygments
-KramdownPygments:
+markdown: kramdown
+kramdown:
   input: GFM
   hard_wrap: false
   default_lang: common-lisp
