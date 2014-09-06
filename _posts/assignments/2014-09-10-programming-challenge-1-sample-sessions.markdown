@@ -44,11 +44,17 @@ points.
 
 5) Bind the symbol colors to a list of your three favorite colors. Then, type
 each of the following forms:
+
   - `'colors`
+
   - `colors`
+
   - `(describe 'colors)`
+
   - `(describe colors)`
+
   - `(type-of 'colors)`
+
   - `(type-of colors)`
 
 6) Write one simple, moderately imaginative form which features `car`, a second
