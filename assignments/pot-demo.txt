@@ -1,0 +1,9 @@
+[1]> (load "pot.l")
+;; Loading file pot.l ...
+;; Loaded file pot.l
+T
+[2]> (perimeter-of-triangle '((4 8) (1 2) (10.5 7.7)))
+24.293932
+[3]> (perimeter-of-triangle '((0 0) (9.5 2) (-5 -5)))
+32.880554
+[4]> (bye)

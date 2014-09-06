@@ -1,0 +1,37 @@
+[1]> (setf colors '(red green blue))
+(RED GREEN BLUE)
+[2]> 'colors
+COLORS
+[3]> colors
+(RED GREEN BLUE)
+[4]> (describe 'colors)
+
+COLORS is the symbol COLORS, lies in #<PACKAGE COMMON-LISP-USER>, is
+accessible in 1 package COMMON-LISP-USER, a variable, value: (RED GREEN BLUE).
+
+ #<PACKAGE COMMON-LISP-USER> is the package named COMMON-LISP-USER. It has 2
+ nicknames CL-USER, USER.
+ It imports the external symbols of 2 packages COMMON-LISP, EXT and exports
+ no symbols, but no package uses these exports.
+
+ (RED GREEN BLUE) is a list of length 3.
+
+[5]> (describe colors)
+
+(RED GREEN BLUE) is a list of length 3.
+
+[6]> (type-of 'colors)
+SYMBOL
+[7]> (type-of colors)
+CONS
+[8]> (car '((A B C) EASY AS (1 2 3)))
+(A B C)
+[9]> (cdr '((SIMPLE AS) DO RE ME))
+(DO RE ME)
+[10]> (cons 'YOU '(AND ME))
+(YOU AND ME)
+[11]> (list 'ITS 'EASY)
+(ITS EASY)
+[12]> (append '(SING) '(A) '(SIMPLE MELODY))
+(SING A SIMPLE MELODY)
+[13]> (bye)

@@ -1,0 +1,8 @@
+(defun area-of-semi-circle (radius)
+  (* 1/2 pi (expt radius 2)))
+(defun area-of-rectangle (width height)
+  (* width height))
+(defun area-of-norman-window (width height)
+  (let ((radius (/ width 2)))
+    (+ (area-of-semi-circle radius)
+       (area-of-rectangle width height))))

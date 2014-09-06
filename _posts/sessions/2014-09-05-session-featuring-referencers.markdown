@@ -1,11 +1,11 @@
 ---
 layout: post
 category: sessions
-title: "Session Featuring References"
+title: "Session Featuring Referencers"
 date: 2014-09-05T10:04:17-04:00
 ---
 
-[Download](/ai-programming1/sessions/references-session.txt)
+[Download]({{ site.baseurl }}/sessions/referencers-session.txt)
 
 ```common-lisp
 [1]> ()

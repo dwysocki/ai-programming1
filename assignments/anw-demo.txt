@@ -1,0 +1,9 @@
+[1]> (load "anw.l")
+;; Loading file anw.l ...
+;; Loaded file anw.l
+T
+[2]> (area-of-norman-window 10 21.5)
+254.26991
+[3]> (area-of-norman-window 44.5 66)
+3714.6423
+[4]> (bye)
