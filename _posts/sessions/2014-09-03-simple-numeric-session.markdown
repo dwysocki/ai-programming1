@@ -7,7 +7,7 @@ date: 2014-09-03T09:56:34-04:00
 
 [Download]({{ site.baseurl }}/sessions/simple-numeric-session.txt)
 
-```common-lisp
+```
 [1]> (+ 1 2 3 4 5 6 7 8 9 10)
 55
 [2]> (* 1 2 3 4 5 6 7 8 9 10)
