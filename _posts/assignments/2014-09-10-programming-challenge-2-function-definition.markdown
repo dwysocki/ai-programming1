@@ -2,7 +2,7 @@
 layout: post
 category: assignments
 title: "Programming Challenge #2 - \"Function Definition\""
-date: 2014-08-10T09:10:01-04:00
+date: 2014-09-10T09:10:01-04:00
 ---
 
 1. PERIMETER OF TRIANGLE

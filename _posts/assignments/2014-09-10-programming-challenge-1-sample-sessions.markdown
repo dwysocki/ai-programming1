@@ -2,7 +2,7 @@
 layout: post
 category: assignments
 title: "Programming Challenge #1 - \"Sample Sessions\""
-date: 2014-08-10T09:10:00-04:00
+date: 2014-09-10T09:10:00-04:00
 ---
 
 # Introductory Session
