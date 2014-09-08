@@ -200,3 +200,27 @@ number of Lisp objects.
 *Note: The "icons of list processing" are all you actually need to do list
        processing in Lisp. The rest are for convenience.*
 
+**Summary of some Referencers and Constructors**
+
+`(nth NUMBER LIST)` returns the element in position `NUMBER` of the list `LIST`,
+with indexing beginning at `0`.
+
+`(list & SEQUENCE-OF-FORMS)` evaluates each `FORM` in the `SEQUENCE-OF-FORMS`
+and then constructs a list from the values of the `FORMS`.
+
+`(append & SEQUENCE-OF-FORMS)` evaluates each `FORM` in the `SEQUENCE-OF-FORMS`
+and then constructs a list by concatenating the values of the `FORMS`.
+
+**Evaluators**
+
+An *evaluator* is a function which performs function evaluation!
+
+In Lisp, `eval` is the basic evaluator, but `apply` and `funcall` serve as
+alternative evaluators that often provide convenience and conceptual clarity.
+
+`(eval FORM)` evaluates `FORM`.
+
+`(apply FUNCTION LIST-OF-ARGUMENTS)` applies `FUNCTION` to `LIST-OF-ARGUMENTS`.
+
+`(funcall FUNCTION & LIST-OF-ARGUMENTS)` applies `FUNCTION` to
+`LIST-OF-ARGUMENTS`.
