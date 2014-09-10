@@ -224,3 +224,26 @@ alternative evaluators that often provide convenience and conceptual clarity.
 
 `(funcall FUNCTION & LIST-OF-ARGUMENTS)` applies `FUNCTION` to
 `LIST-OF-ARGUMENTS`.
+
+**Predicates**
+
+A *predicate* is a function which takes some number of arguments and returns a
+boolean value.
+
+
+`COND`
+
+1. Any number of cases
+2. Any number of forms in a case
+3. Only one case fires -- the first for which the first experssion in the case
+   evaluates to non-`NIL`.
+4. The value of the `COND` is the value of the last form evaluated in the case
+   that is selected -- or `NIL` if no case fires.
+
+```
+(defun sign (n)
+  (cond
+    ((> n 0) 'positive)
+    ((< n 0) 'negative)
+    (T       'zero)))
+```
