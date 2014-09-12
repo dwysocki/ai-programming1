@@ -40,7 +40,7 @@ points.
 [`referencers`]({{ site.baseurl }}/sessions/referencers-session.txt).
 
 4) Simply duplicate the sample session presented in class which featured
-`constructors`.
+[`constructors`]({{ site.baseurl }}/sessions/constructors-session.txt).
 
 5) Bind the symbol colors to a list of your three favorite colors. Then, type
 each of the following forms:
