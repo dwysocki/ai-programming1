@@ -247,3 +247,70 @@ boolean value.
     ((< n 0) 'negative)
     (T       'zero)))
 ```
+
+**List Processing**
+
+~~~
+> (singletonp '(MONDAY))
+T
+> (singletonp '())
+NIL
+> (singletonp '(ONE TWO THREE))
+NIL
+~~~
+
+~~~
+;; Graci's definition
+(defun singletonp (the-list)
+  (cond
+    ((null the-list)       NIL)
+	((null (cdr the-list)) T)
+	;; can just leave this part off to return NIL
+	(T                     NIL)))
+
+;; My definition
+(defun singletonp (the-list)
+  (and (car the-list) (not (cdr the-list))))
+~~~
+
+~~~
+> (rac '(ONE TWO THREE))
+THREE
+> (rac '(MONDAY))
+MONDAY
+~~~
+
+Thoughts:
+
+- `rac` of `(A)` is `A`
+- `rac` of `(A B C D)` is the `rac` of `(cdr '(A B C D)) => (B C D)`
+
+~~~
+;; Returns the last element of the list
+(defun rac (the-list)
+  (cond
+    ((singletonp the-list) (car the-list))
+    (T                     (rac (cdr the-list)))))
+~~~
+
+~~~
+> (rdc '(A B C D))
+(A B C)
+> (rdc '(S))
+()
+~~~
+
+Thoughts:
+
+- `rdc` of `(x)` is `()`
+- `rdc` of `(A B C D)` is the `cons` of `A`
+  and the `rdc` of `(cdr '(A B C D)) => (B C D)`
+
+~~~
+;; Returns all but the rac of the list
+;; (pronounced "rudder cdr")
+(defun rdc (the-list)
+  (cond
+    ((singletonp the-list) ())
+	(T                     (cons (car the-list) (rdc (cdr the-list))))))
+~~~
