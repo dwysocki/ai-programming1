@@ -2,7 +2,10 @@
 title: "AI Programming (CSC416) - Textbook Assignment #2"
 author: "Dan Wysocki"
 
-output: pdf_document
+output:
+  pdf_document:
+    includes:
+      in_header: a2header.tex
 ---
 
 Chapter 2 deals with uninformed search. Uninformed search is a broad term
@@ -74,9 +77,10 @@ collection while searching.
    are permitted to be weighed. Recall that a balance scale returns one of
    three results: equal, left side is lighter, or left side is heavier.
 
-    Still formatting this in $\text{\LaTeX}$...
-
-    ![](img/a2e1.jpg)
+    \begin{figure}[H]
+	  \centering
+      \includegraphics[width=\textwidth]{img/a2e1.eps}
+    \end{figure}
 
 \setcounter{enumi}{3}
 
@@ -102,9 +106,10 @@ collection while searching.
     c. **Draw the portion of the search tree expanded in the search for a first
        solution.**
 
-        Still formatting this in $\text{\LaTeX}$...
-
-        ![](img/a2e4.jpg)
+        \begin{figure}[H]
+	      \centering
+          \includegraphics[width=\textwidth]{img/a2e4.eps}
+        \end{figure}
 
 5. **Consider the following generator for the 4-Queens problem: for $i$ = 1 to
    4, randomly assign Queen $i$ to a row. Is this generator complete? Is it

@@ -1,0 +1,90 @@
+/* Chapter 2 Exercise 4 Graph */
+digraph queens {
+  size="10,10";
+  node [color=lightblue, style=filled];
+
+  "Q111" [
+    label = <Q<SUB>1</SUB> = (1, 1)>
+  ];
+
+  "Q232" [
+    label = <Q<SUB>2</SUB> = (3, 2)>
+  ];
+  "Q242" [
+    label = <Q<SUB>2</SUB> = (4, 2)>
+  ];
+  "Q223" [
+    label = <Q<SUB>2</SUB> = (2, 3)>
+  ];
+  "Q243" [
+    label = <Q<SUB>2</SUB> = (4, 3)>
+  ];
+  "Q224" [
+    label = <Q<SUB>2</SUB> = (2, 4)>
+  ];
+  "Q234" [
+    label = <Q<SUB>2</SUB> = (3, 4)>
+  ];
+
+  "Q324" [
+    label = <Q<SUB>3</SUB> = (2, 4)>
+  ];
+  "Q323" [
+    label = <Q<SUB>3</SUB> = (2, 3)>
+  ];
+  "Q334" [
+    label = <Q<SUB>3</SUB> = (3, 4)>
+  ];
+  "Q342" [
+    label = <Q<SUB>3</SUB> = (4, 2)>
+  ];
+  "Q324" [
+    label = <Q<SUB>3</SUB> = (2, 4)>
+  ];
+  "Q332" [
+    label = <Q<SUB>3</SUB> = (3, 2)>
+  ];
+  "Q343" [
+    label = <Q<SUB>3</SUB> = (4, 3)>
+  ];
+  "Q342" [
+    label = <Q<SUB>3</SUB> = (4, 2)>
+  ];
+  "S" [
+    label = "success"
+  ];
+  "F" [
+    label = "failure"
+  ];
+
+
+
+  "Q111" -> "Q232";
+  "Q111" -> "Q242";
+  "Q111" -> "Q223";
+  "Q111" -> "Q243";
+  "Q111" -> "Q224";
+  "Q111" -> "Q234";
+
+
+  "Q232" -> "Q324";
+
+  "Q242" -> "Q323";
+  "Q242" -> "Q334";
+
+  "Q223" -> "Q342";
+
+  "Q243" -> "Q324";
+
+  "Q224" -> "Q332";
+  "Q224" -> "Q343";
+
+  "Q234" -> "Q342";
+
+  "Q324" -> "F";
+  "Q323" -> "F";
+  "Q334" -> "F";
+  "Q342" -> "F";
+  "Q332" -> "F";
+  "Q343" -> "F";
+}

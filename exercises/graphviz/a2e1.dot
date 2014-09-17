@@ -1,0 +1,231 @@
+/* Chapter 2 Exercise 1 Graph */
+digraph falsecoin {
+  size="10,10";
+  node [color=lightblue, style=filled];
+
+  "root" [
+    label = <[C<SUB>1</SUB> ... C<SUB>12</SUB>] <BR/> C<SUB>1</SUB> ... C<SUB>4</SUB>:C<SUB>5</SUB> ... C<SUB>8</SUB>>
+  ];
+  "lt" [
+    label = <[C<SUB>1</SUB> ... C<SUB>8</SUB>] <BR/> C<SUB>1</SUB> C<SUB>9</SUB> C<SUB>10</SUB> C<SUB>11</SUB> : C<SUB>2</SUB> ... C<SUB>5</SUB>>
+  ];
+  "eq" [
+    label = <[C<SUB>9</SUB> ... C<SUB>12</SUB>] <BR/> C<SUB>9</SUB> C<SUB>10</SUB> C<SUB>11</SUB> : C<SUB>1</SUB> C<SUB>2</SUB> C<SUB>3</SUB>>
+  ];
+  "gt" [
+    label = <[C<SUB>1</SUB> ... C<SUB>8</SUB>] <BR/> C<SUB>1</SUB> C<SUB>5</SUB> C<SUB>6</SUB> C<SUB>7</SUB> : C<SUB>8</SUB> ... C<SUB>11</SUB>>
+  ];
+
+  "lt_lt" [
+    label = <[C<SUB>1</SUB> C<SUB>5</SUB>] <BR/> C<SUB>1</SUB> : C<SUB>2</SUB>>
+  ];
+  "lt_eq" [
+    label = <[C<SUB>6</SUB> C<SUB>7</SUB> C<SUB>8</SUB>] <BR/> C<SUB>6</SUB> : C<SUB>7</SUB>>
+  ];
+  "lt_gt" [
+    label = <[C<SUB>2</SUB> C<SUB>3</SUB> C<SUB>4</SUB>] <BR/> C<SUB>2</SUB> : C<SUB>3</SUB>>
+  ];
+  "eq_lt" [
+    label = <[C<SUB>9</SUB> C<SUB>10</SUB> C<SUB>11</SUB>] <BR/> C<SUB>9</SUB> : C<SUB>10</SUB>>
+  ];
+  "eq_eq" [
+    label = < [C<SUB>12</SUB>] >
+  ];
+  "eq_gt" [
+    label = <[C<SUB>9</SUB> C<SUB>10</SUB> C<SUB>11</SUB>] <BR/> C<SUB>9</SUB> : C<SUB>10</SUB>>
+  ];
+  "gt_lt" [
+    label = <[C<SUB>5</SUB> C<SUB>6</SUB> C<SUB>7</SUB>] <BR/> C<SUB>5</SUB> : C<SUB>6</SUB>>
+  ];
+  "gt_eq" [
+    label = <[C<SUB>2</SUB> C<SUB>3</SUB> C<SUB>4</SUB>] <BR/> C<SUB>2</SUB> C<SUB>3</SUB>>
+  ];
+  "gt_gt" [
+    label = <[C<SUB>1</SUB> C<SUB>8</SUB>] <BR/> C<SUB>1</SUB> C<SUB>2</SUB>>
+  ];
+
+  "lt_lt_lt" [
+    label = < [C<SUB>1</SUB>] >
+  ];
+  "lt_lt_eq" [
+    label = < [C<SUB>5</SUB>] >
+  ];
+  "lt_lt_gt" [
+    label = < [] >
+  ];
+  "lt_eq_lt" [
+    label = < [C<SUB>6</SUB>] >
+  ];
+  "lt_eq_eq" [
+    label = < [C<SUB>8</SUB>] >
+  ];
+  "lt_eq_gt" [
+    label = < [C<SUB>7</SUB>] >
+  ];
+  "lt_gt_lt" [
+    label = < [C<SUB>2</SUB>] >
+  ];
+  "lt_gt_eq" [
+    label = < [C<SUB>4</SUB>] >
+  ];
+  "lt_gt_gt" [
+    label = < [C<SUB>3</SUB>] >
+  ];
+  "eq_lt_lt" [
+    label = < [C<SUB>9</SUB>] >
+  ];
+  "eq_lt_eq" [
+    label = < [C<SUB>11</SUB>] >
+  ];
+  "eq_lt_gt" [
+    label = < [C<SUB>10</SUB>] >
+  ];
+  "eq_gt_lt" [
+    label = < [C<SUB>10</SUB>] >
+  ];
+  "eq_gt_eq" [
+    label = < [C<SUB>11</SUB>] >
+  ];
+  "eq_gt_gt" [
+    label = < [C<SUB>9</SUB>] >
+  ];
+  "gt_lt_lt" [
+    label = < [C<SUB>5</SUB>] >
+  ];
+  "gt_lt_eq" [
+    label = < [C<SUB>7</SUB>] >
+  ];
+  "gt_lt_gt" [
+    label = < [C<SUB>6</SUB>] >
+  ];
+  "gt_eq_lt" [
+    label = < [C<SUB>3</SUB>] >
+  ];
+  "gt_eq_eq" [
+    label = < [C<SUB>4</SUB>] >
+  ];
+  "gt_eq_gt" [
+    label = < [C<SUB>2</SUB>] >
+  ];
+  "gt_gt_lt" [
+    label = < [] >
+  ];
+  "gt_gt_eq" [
+    label = < [C<SUB>8</SUB>] >
+  ];
+  "gt_gt_gt" [
+    label = < [C<SUB>1</SUB>] >
+  ];
+
+  "root" -> "lt" [
+    label = "<"
+  ];
+  "root" -> "eq" [
+    label = "="
+  ];
+  "root" -> "gt" [
+    label = ">"
+  ];
+
+  "lt" -> "lt_lt" [
+    label = "<"
+  ];
+  "lt" -> "lt_eq" [
+    label = "="
+  ];
+  "lt" -> "lt_gt" [
+    label = ">"
+  ];
+  "eq" -> "eq_lt" [
+    label = "<"
+  ];
+  "eq" -> "eq_eq" [
+    label = "="
+  ];
+  "eq" -> "eq_gt" [
+    label = ">"
+  ];
+  "gt" -> "gt_lt" [
+    label = "<"
+  ];
+  "gt" -> "gt_eq" [
+    label = "="
+  ];
+  "gt" -> "gt_gt" [
+    label = ">"
+  ];
+
+  "lt_lt" -> "lt_lt_lt" [
+    label = "<"
+  ];
+  "lt_lt" -> "lt_lt_eq" [
+    label = "="
+  ];
+  "lt_lt" -> "lt_lt_gt" [
+    label = ">"
+  ];
+  "lt_eq" -> "lt_eq_lt" [
+    label = "<"
+  ];
+  "lt_eq" -> "lt_eq_eq" [
+    label = "="
+  ];
+  "lt_eq" -> "lt_eq_gt" [
+    label = ">"
+  ];
+  "lt_gt" -> "lt_gt_lt" [
+    label = "<"
+  ];
+  "lt_gt" -> "lt_gt_eq" [
+    label = "="
+  ];
+  "lt_gt" -> "lt_gt_gt" [
+    label = ">"
+  ];
+  "eq_lt" -> "eq_lt_lt" [
+    label = "<"
+  ];
+  "eq_lt" -> "eq_lt_eq" [
+    label = "="
+  ];
+  "eq_lt" -> "eq_lt_gt" [
+    label = ">"
+  ];
+  "eq_gt" -> "eq_gt_lt" [
+    label = "<"
+  ];
+  "eq_gt" -> "eq_gt_eq" [
+    label = "="
+  ];
+  "eq_gt" -> "eq_gt_gt" [
+    label = ">"
+  ];
+  "gt_lt" -> "gt_lt_lt" [
+    label = "<"
+  ];
+  "gt_lt" -> "gt_lt_eq" [
+    label = "="
+  ];
+  "gt_lt" -> "gt_lt_gt" [
+    label = ">"
+  ];
+  "gt_eq" -> "gt_eq_lt" [
+    label = "<"
+  ];
+  "gt_eq" -> "gt_eq_eq" [
+    label = "="
+  ];
+  "gt_eq" -> "gt_eq_gt" [
+    label = ">"
+  ];
+  "gt_gt" -> "gt_gt_lt" [
+    label = "<"
+  ];
+  "gt_gt" -> "gt_gt_eq" [
+    label = "="
+  ];
+  "gt_gt" -> "gt_gt_gt" [
+    label = ">"
+  ];
+
+}

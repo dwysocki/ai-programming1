@@ -314,3 +314,48 @@ Thoughts:
     ((singletonp the-list) ())
 	(T                     (cons (car the-list) (rdc (cdr the-list))))))
 ~~~
+
+- `snoc` of `x` and `()` is `(x)`
+- `snoc` of `x` and `(a b c)` is the `cons` of the `car` of `(a b c)`
+  with the `snoc` of `x` with the `cdr` of `(a b c)`
+
+~~~
+(defun snoc (x the-list)
+  (cond
+    ((null the-list) (cons x the-list))
+    (T               (cons (car the-list) (snoc x (cdr the-list))))))
+~~~
+
+~~~
+(defun sum (x)
+  (if (null x)
+    0
+    (+ (car x) (sum (cdr x)))))
+~~~
+
+~~~
+> (iota 6)
+(1 2 3 4 5 6)
+> (iota 0)
+()
+~~~
+
+~~~
+(defun iota (n)
+  (cond
+    ((= n 0) ())
+    (T       (snoc n (iota (- n 1))))))
+~~~
+
+~~~
+> (evenp 5)
+NIL
+> (evenp 6)
+T
+> (numberp 'FOUR)
+NIL
+> (numberp 4)
+T
+> (numberp '(4))
+NIL
+~~~
