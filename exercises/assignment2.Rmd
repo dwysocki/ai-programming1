@@ -78,7 +78,7 @@ collection while searching.
    three results: equal, left side is lighter, or left side is heavier.
 
     \begin{figure}[H]
-	  \centering
+      \centering
       \includegraphics[width=\textwidth]{img/a2e1.eps}
     \end{figure}
 
@@ -107,7 +107,7 @@ collection while searching.
        solution.**
 
         \begin{figure}[H]
-	      \centering
+          \centering
           \includegraphics[width=\textwidth]{img/a2e4.eps}
         \end{figure}
 
@@ -138,3 +138,54 @@ collection while searching.
     exceeds 100, and the rest of which are within the range, therefore it
     gives the only two perfect numbers between 1 and 100:
     $\{ 6, 28 \}$, with 496 as the next perfect number.
+
+7. Use Dijkstra’s Algorithm to find the shortest path from the source vertex
+   $V_0$ to all other vertices in Figure 2.35.
+
+    Using Dijkstra's Algorithm, the shortest paths to each vertex are found to
+    be the following:
+
+    |  Vertex  |          Path                 | Cost |
+    |:--------:+-------------------------------|:----:|
+    |  $V_0$   | $V_0$                         |  0   |
+    |  $V_1$   | $V_0 \to V_1$                 |  4   |
+    |  $V_2$   | $V_0 \to V_1 \to V_2$         |  7   |
+    |  $V_3$   | $V_0 \to V_1 \to V_3$         |  6   |
+    |  $V_4$   | $V_0 \to V_1 \to V_3 \to V_4$ |  7   |
+
+    The steps taken are illustrated in the following graphs. The graphs obey
+    the following notation:
+
+    - The distance from $V_0$ is denoted by a number below the label of the
+      vertex.
+    - If the node has been visited, its distance is written in boldface.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_a}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_b}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_c}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_d}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_e}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{img/a2e7_f}
+\end{figure}
