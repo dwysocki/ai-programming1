@@ -1,0 +1,119 @@
+[1]> (load "lp.l")
+;; Loading file lp.l ...
+;; Loaded file lp.l
+T
+[2]> (singletonp '(foobar))
+T
+[3]> (singletonp '(foo bar))
+NIL
+[4]> (singletonp '(how much wood would a woodchuck chuck?))
+NIL
+[5]> (trace rac)
+;; Tracing function RAC.
+(RAC)
+[6]> (rac '(foobar))
+1. Trace: (RAC '(FOOBAR))
+1. Trace: RAC ==> FOOBAR
+FOOBAR
+[7]> (rac '(foo bar baz qux))
+1. Trace: (RAC '(FOO BAR BAZ QUX))
+2. Trace: (RAC '(BAR BAZ QUX))
+3. Trace: (RAC '(BAZ QUX))
+4. Trace: (RAC '(QUX))
+4. Trace: RAC ==> QUX
+3. Trace: RAC ==> QUX
+2. Trace: RAC ==> QUX
+1. Trace: RAC ==> QUX
+QUX
+[8]> (trace rdc)
+;; Tracing function RDC.
+(RDC)
+[9]> (rdc '(foobar))
+1. Trace: (RDC '(FOOBAR))
+1. Trace: RDC ==> NIL
+NIL
+[10]> (rdc '(one two buckle my shoe))
+1. Trace: (RDC '(ONE TWO BUCKLE MY SHOE))
+2. Trace: (RDC '(TWO BUCKLE MY SHOE))
+3. Trace: (RDC '(BUCKLE MY SHOE))
+4. Trace: (RDC '(MY SHOE))
+5. Trace: (RDC '(SHOE))
+5. Trace: RDC ==> NIL
+4. Trace: RDC ==> (MY)
+3. Trace: RDC ==> (BUCKLE MY)
+2. Trace: RDC ==> (TWO BUCKLE MY)
+1. Trace: RDC ==> (ONE TWO BUCKLE MY)
+(ONE TWO BUCKLE MY)
+[11]> (untrace rac rdc)
+(RAC RDC)
+[12]> (trace snoc)
+;; Tracing function SNOC.
+(SNOC)
+[13]> (snoc 'blue ())
+1. Trace: (SNOC 'BLUE 'NIL)
+1. Trace: SNOC ==> (BLUE)
+(BLUE)
+[14]> (snoc 'blue '(red))
+1. Trace: (SNOC 'BLUE '(RED))
+2. Trace: (SNOC 'BLUE 'NIL)
+2. Trace: SNOC ==> (BLUE)
+1. Trace: SNOC ==> (RED BLUE)
+(RED BLUE)
+[15]> (snoc 'blue '(light-blue turquois teal aqua))
+1. Trace: (SNOC 'BLUE '(LIGHT-BLUE TURQUOIS TEAL AQUA))
+2. Trace: (SNOC 'BLUE '(TURQUOIS TEAL AQUA))
+3. Trace: (SNOC 'BLUE '(TEAL AQUA))
+4. Trace: (SNOC 'BLUE '(AQUA))
+5. Trace: (SNOC 'BLUE 'NIL)
+5. Trace: SNOC ==> (BLUE)
+4. Trace: SNOC ==> (AQUA BLUE)
+3. Trace: SNOC ==> (TEAL AQUA BLUE)
+2. Trace: SNOC ==> (TURQUOIS TEAL AQUA BLUE)
+1. Trace: SNOC ==> (LIGHT-BLUE TURQUOIS TEAL AQUA BLUE)
+(LIGHT-BLUE TURQUOIS TEAL AQUA BLUE)
+[16]> (untrace snoc)
+(SNOC)
+[17]> (trace palindromep)
+;; Tracing function PALINDROMEP.
+(PALINDROMEP)
+[18]> (palindromep ())
+1. Trace: (PALINDROMEP 'NIL)
+1. Trace: PALINDROMEP ==> T
+T
+[19]> (palindromep '(palindrome))
+1. Trace: (PALINDROMEP '(PALINDROME))
+2. Trace: (PALINDROMEP 'NIL)
+2. Trace: PALINDROMEP ==> T
+1. Trace: PALINDROMEP ==> T
+T
+[20]> (palindromep '(clos sloc))
+1. Trace: (PALINDROMEP '(CLOS SLOC))
+1. Trace: PALINDROMEP ==> NIL
+NIL
+[21]> (palindromep '(food drink food))
+1. Trace: (PALINDROMEP '(FOOD DRINK FOOD))
+2. Trace: (PALINDROMEP '(DRINK))
+3. Trace: (PALINDROMEP 'NIL)
+3. Trace: PALINDROMEP ==> T
+2. Trace: PALINDROMEP ==> T
+1. Trace: PALINDROMEP ==> T
+T
+[22]> (palindromep '(1 2 3 4 5 4 2 3 1))
+1. Trace: (PALINDROMEP '(1 2 3 4 5 4 2 3 1))
+2. Trace: (PALINDROMEP '(2 3 4 5 4 2 3))
+2. Trace: PALINDROMEP ==> NIL
+1. Trace: PALINDROMEP ==> NIL
+NIL
+[23]> (palindromep '(hey hey my my my my hey hey))
+1. Trace: (PALINDROMEP '(HEY HEY MY MY MY MY HEY HEY))
+2. Trace: (PALINDROMEP '(HEY MY MY MY MY HEY))
+3. Trace: (PALINDROMEP '(MY MY MY MY))
+4. Trace: (PALINDROMEP '(MY MY))
+5. Trace: (PALINDROMEP 'NIL)
+5. Trace: PALINDROMEP ==> T
+4. Trace: PALINDROMEP ==> T
+3. Trace: PALINDROMEP ==> T
+2. Trace: PALINDROMEP ==> T
+1. Trace: PALINDROMEP ==> T
+T
+[24]> (bye)

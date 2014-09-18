@@ -1,0 +1,15 @@
+[1]> (load "lp.l")
+;; Loading file lp.l ...
+;; Loaded file lp.l
+T
+[2]> (take-from 3 (iota 10))
+(1 2 4 5 6 7 8 9 10)
+[3]> (take-from 1 (generate 10 1))
+NIL
+[4]> (take-from 10 (generate 10 1))
+(1 1 1 1 1 1 1 1 1 1)
+[5]> (take-from 'foo ())
+NIL
+[6]> (take-from 'light '(red light green light 1 2 3))
+(RED GREEN 1 2 3)
+[7]> (bye)

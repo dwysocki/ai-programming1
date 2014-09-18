@@ -1,0 +1,17 @@
+[1]> (load "lp.l")
+;; Loading file lp.l ...
+;; Loaded file lp.l
+T
+[2]> (filter-in (function evenp) (iota 10))
+(2 4 6 8 10)
+[3]> (filter-in (function numberp) '(1 2 FOO BAR))
+(1 2)
+[4]> (filter-in (function zerop) '(1 0 0 1 0 1 1 1 0 1))
+(0 0 0 0)
+[5]> (filter-out (function evenp) (iota 10))
+(1 3 5 7 9)
+[6]> (filter-out (function numberp) '(1 2 FOO BAR))
+(FOO BAR)
+[7]> (filter-out (function zerop) '(1 0 0 1 0 1 1 1 0 1))
+(1 1 1 1 1 1)
+[8]> (bye)

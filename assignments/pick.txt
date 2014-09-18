@@ -1,0 +1,52 @@
+[1]> (load "lp.l")
+;; Loading file lp.l ...
+;; Loaded file lp.l
+T
+[2]> (defconstant lists '((1 2 3 4 5)
+                          (ONE TWO BUCKLE MY SHOE)
+                          (ABC "123")
+                          (A B C 1 2 3)
+                          (LOOK MA NO SETF)))
+LISTS
+[3]> (doseq (l lists)
+       (format t "Picking from: ~A" l)
+       (dotimes (i 5)
+         (print (pick l)))
+       (format t "~%~%"))
+Picking from: (1 2 3 4 5)
+2 
+5 
+3 
+5 
+3 
+
+Picking from: (ONE TWO BUCKLE MY SHOE)
+BUCKLE 
+ONE 
+ONE 
+TWO 
+SHOE 
+
+Picking from: (ABC 123)
+ABC 
+ABC 
+"123" 
+ABC 
+"123" 
+
+Picking from: (A B C 1 2 3)
+A 
+B 
+1 
+C 
+3 
+
+Picking from: (LOOK MA NO SETF)
+SETF 
+SETF 
+NO 
+LOOK 
+NO 
+
+NIL
+[4]> (bye)
