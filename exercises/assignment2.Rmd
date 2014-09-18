@@ -153,39 +153,25 @@ collection while searching.
     |  $V_3$   | $V_0 \to V_1 \to V_3$         |  6   |
     |  $V_4$   | $V_0 \to V_1 \to V_3 \to V_4$ |  7   |
 
-    The steps taken are illustrated in the following graphs. The graphs obey
-    the following notation:
+    The steps taken are illustrated in the following graphs (read left to
+    right). The graphs obey the following notation:
 
     - The distance from $V_0$ is denoted by a number below the label of the
       vertex.
-    - If the node has been visited, its distance is written in boldface.
+    - Unvisted nodes are blue
+	- Visted nodes are red
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{img/a2e7_a}
-\end{figure}
-
-\begin{figure}[H]
-\centering
+\hspace{1in}
 \includegraphics[width=0.4\textwidth]{img/a2e7_b}
-\end{figure}
 
-\begin{figure}[H]
-\centering
 \includegraphics[width=0.4\textwidth]{img/a2e7_c}
-\end{figure}
-
-\begin{figure}[H]
-\centering
+\hspace{1in}
 \includegraphics[width=0.4\textwidth]{img/a2e7_d}
-\end{figure}
 
-\begin{figure}[H]
-\centering
 \includegraphics[width=0.4\textwidth]{img/a2e7_e}
-\end{figure}
-
-\begin{figure}[H]
-\centering
+\hspace{1in}
 \includegraphics[width=0.4\textwidth]{img/a2e7_f}
 \end{figure}

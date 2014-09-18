@@ -5,7 +5,8 @@ digraph dijkstra {
   node [color=lightblue, style=filled];
 
   "V0" [
-    label = <V<SUB>0</SUB> <BR/><BR/><B>0</B>>
+    label = <V<SUB>0</SUB> <BR/><BR/>0>
+    color = red
   ];
   "V1" [
     label = <V<SUB>1</SUB> <BR/><BR/>4>

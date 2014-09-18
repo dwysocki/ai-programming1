@@ -5,16 +5,20 @@ digraph dijkstra {
   node [color=lightblue, style=filled];
 
   "V0" [
-    label = <V<SUB>0</SUB> <BR/><BR/><B>0</B>>
+    label = <V<SUB>0</SUB> <BR/><BR/>0>
+    color = red
   ];
   "V1" [
-    label = <V<SUB>1</SUB> <BR/><BR/><B>4</B>>
+    label = <V<SUB>1</SUB> <BR/><BR/>4>
+    color = red
   ];
   "V2" [
-    label = <V<SUB>2</SUB> <BR/><BR/><B>7</B>>
+    label = <V<SUB>2</SUB> <BR/><BR/>7>
+    color = red
   ];
   "V3" [
-    label = <V<SUB>3</SUB> <BR/><BR/><B>6</B>>
+    label = <V<SUB>3</SUB> <BR/><BR/>6>
+    color = red
   ];
   "V4" [
     label = <V<SUB>4</SUB> <BR/><BR/>7>
