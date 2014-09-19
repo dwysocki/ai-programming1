@@ -46,13 +46,13 @@ A *form* is an expression which can be evaluated by the Lisp interpreter.
 
 The read-eval-print loop (REPL)
 
-```ruby
+{% highlight ruby %}
 for(ever)
   x = read()
   z = eval(x)
   print(z)
 end
-```
+{% endhighlight %}
 
 [Introductory Lisp Session](
     /ai-programming1/sessions/2014/08/29/introductory-session.html)
@@ -245,26 +245,26 @@ boolean value.
 4. The value of the `COND` is the value of the last form evaluated in the case
    that is selected -- or `NIL` if no case fires.
 
-```
+{% highlight cl %}
 (defun sign (n)
   (cond
     ((> n 0) 'positive)
     ((< n 0) 'negative)
     (T       'zero)))
-```
+{% endhighlight %}
 
 **List Processing**
 
-~~~
+{% highlight cl %}
 > (singletonp '(MONDAY))
 T
 > (singletonp '())
 NIL
 > (singletonp '(ONE TWO THREE))
 NIL
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 ;; Graci's definition
 (defun singletonp (the-list)
   (cond
@@ -276,34 +276,34 @@ NIL
 ;; My definition
 (defun singletonp (the-list)
   (and (car the-list) (not (cdr the-list))))
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 > (rac '(ONE TWO THREE))
 THREE
 > (rac '(MONDAY))
 MONDAY
-~~~
+{% endhighlight %}
 
 Thoughts:
 
 - `rac` of `(A)` is `A`
 - `rac` of `(A B C D)` is the `rac` of `(cdr '(A B C D)) => (B C D)`
 
-~~~
+{% highlight cl %}
 ;; Returns the last element of the list
 (defun rac (the-list)
   (cond
     ((singletonp the-list) (car the-list))
     (T                     (rac (cdr the-list)))))
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 > (rdc '(A B C D))
 (A B C)
 > (rdc '(S))
 ()
-~~~
+{% endhighlight %}
 
 Thoughts:
 
@@ -311,48 +311,48 @@ Thoughts:
 - `rdc` of `(A B C D)` is the `cons` of `A`
   and the `rdc` of `(cdr '(A B C D)) => (B C D)`
 
-~~~
+{% highlight cl %}
 ;; Returns all but the rac of the list
 ;; (pronounced "rudder cdr")
 (defun rdc (the-list)
   (cond
     ((singletonp the-list) ())
 	(T                     (cons (car the-list) (rdc (cdr the-list))))))
-~~~
+{% endhighlight %}
 
 - `snoc` of `x` and `()` is `(x)`
 - `snoc` of `x` and `(a b c)` is the `cons` of the `car` of `(a b c)`
   with the `snoc` of `x` with the `cdr` of `(a b c)`
 
-~~~
+{% highlight cl %}
 (defun snoc (x the-list)
   (cond
     ((null the-list) (cons x the-list))
     (T               (cons (car the-list) (snoc x (cdr the-list))))))
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 (defun sum (x)
   (if (null x)
     0
     (+ (car x) (sum (cdr x)))))
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 > (iota 6)
 (1 2 3 4 5 6)
 > (iota 0)
 ()
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 (defun iota (n)
   (cond
     ((= n 0) ())
     (T       (snoc n (iota (- n 1))))))
-~~~
+{% endhighlight %}
 
-~~~
+{% highlight cl %}
 > (evenp 5)
 NIL
 > (evenp 6)
@@ -363,4 +363,4 @@ NIL
 T
 > (numberp '(4))
 NIL
-~~~
+{% endhighlight %}

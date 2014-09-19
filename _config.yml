@@ -11,10 +11,8 @@ github_username: dwysocki
 # Build settings
 markdown: kramdown
 kramdown:
-  input: GFM
-  hard_wrap: false
   default_lang: common-lisp
   use_coderay: true
-#highlighter: pygments
+highlighter: pygments
 
 exclude: ["*.Rmd"]

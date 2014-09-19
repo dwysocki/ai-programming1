@@ -7,7 +7,7 @@ date: 2014-09-15T09:10:00-04:00
 
 [`mychoice.l`]({{ site.baseurl }}/assignments/mychoice.l)
 
-~~~
+{% highlight cl %}
 ;; (1)
 
 ;; Simplified version of built-in function mapcar.
@@ -21,7 +21,8 @@ date: 2014-09-15T09:10:00-04:00
 ;; the list.
 (defun mapcar* (fn l)
   (when l
-    (cons (funcall fn (first l)) (mapcar* fn (rest l)))))
+    (cons (funcall fn (first l))
+    (mapcar* fn (rest l)))))
 
 ;; DEMO
 ;; > (mapcar* #'- (list 1 2 3))
@@ -86,4 +87,4 @@ date: 2014-09-15T09:10:00-04:00
 ;; 100
 ;; > (abs* 0)
 ;; 0
-~~~
+{% endhighlight %}
