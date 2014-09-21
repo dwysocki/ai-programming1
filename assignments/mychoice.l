@@ -10,8 +10,9 @@
 ;; and the cdr of the cons cell is the result of recursing on the cdr of
 ;; the list.
 (defun mapcar* (fn l)
-  (when l
-    (cons (funcall fn (first l)) (mapcar* fn (rest l)))))
+  (cond
+   (l (cons (funcall fn (car l))
+	    (mapcar* fn (cdr l))))))
 
 ;; DEMO
 ;; > (mapcar* #'- (list 1 2 3))
@@ -27,25 +28,29 @@
 
 ;; Average of two numbers
 (defun average (x y)
-  (/ (+ x y) 2))
+  (/ (+ x y)
+     2))
 
 ;; Improve the guess by averaging guess and x/guess
 (defun improve (guess x)
-  (average guess (/ x guess)))
+  (average guess
+	   (/ x guess)))
 
 ;; Determine whether guess is within a certain threshold of the answer
 (defconstant *threshold* 0.001)
 (defun good-enough? (guess x)
-  (< (abs (- (expt guess 2) x)) *threshold*))
+  (< (abs (- (expt guess 2)
+	     x))
+     *threshold*))
 
 ;; Compute the square root of x by applying Newton's method, starting
 ;; with the given guess, and improving it until it is good enough,
 ;; using the definitions of improve and good enough from above
 (defun sqrt-iter (guess x)
-  (if (good-enough? guess x)
-    guess
-    (sqrt-iter (improve guess x)
-	       x)))
+  (cond
+   ((good-enough? guess x) guess)
+   (T                      (sqrt-iter (improve guess x)
+				      x))))
 
 ;; Compute the square root of x, by applying Newton's method, starting with
 ;; 1.0 as the guess
@@ -62,12 +67,14 @@
 ;; (3)
 
 ;; Compute the absolute value of x (taken from SICP)
-;; Uses if for branching, the < predicate for determining if x is negative,
-;; and the - function to make x positive when it's negative.
+;; Uses cond for branching, the < predicate for determining if x is negative,
+;; the = and > predicates to determine if x is zero or positive,
+;; and the single-argument - function to make x positive when it's negative.
 (defun abs* (x)
-  (if (< x 0)
-    (- x)
-    x))
+  (cond
+   ((< x 0) (- x))
+   ((= x 0)    x)
+   ((> x 0)    x)))
 
 ;; DEMO
 ;; > (abs* 100)
