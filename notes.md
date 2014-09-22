@@ -364,3 +364,13 @@ T
 > (numberp '(4))
 NIL
 {% endhighlight %}
+
+**Keyword Arguments**
+
+Arguments are sometimes given names! This is generally done either to provide
+flexibility or to add integrity to the code.
+
+**Rest Arguments**
+
+A "rest" parameter will bind any "left over" items into a list for subsequent
+use in the function. (demo next time)
