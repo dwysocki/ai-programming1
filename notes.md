@@ -374,3 +374,57 @@ flexibility or to add integrity to the code.
 
 A "rest" parameter will bind any "left over" items into a list for subsequent
 use in the function. (demo next time)
+
+{% highlight cl %}
+(defun demorest (f &rest r)
+  (format T "F = ~A~%" F)
+  (format T "R = ~A~%" R))
+
+> (demorest 1 2 3 4)
+F = 1
+R = (2 3 4)
+NIL
+> (demorest 'A 'B 'C 'D 'E 'F)
+F = A
+R = (B C D E F)
+NIL
+
+(defun name (&rest r)
+  r)
+> (name 'craig 'graci)
+(CRAIG GRACI)
+> (name 'jose 'aldo 'silva 'da 'costa)
+(JOSE ALDO SILVA DA COSTA)
+{% endhighlight %}
+
+# Mapping Functions
+
+{% highlight cl %}
+;; mapcar which accepts 1 list argument ;;
+(defun apply-to-all-1 (fun lst)
+  (let ((f (car lst))
+        (r (cdr lst)))
+    (cond
+      ((null lst) ())
+      (T          (cons (funcall fun f)
+                        (apply-to-all-1 fun r))))))
+; demo
+> (apply-to-all-1 #'car  '((A B) (C D) (E F)))
+(A C E)
+> (apply-to-all-1 #'cadr '((A B) (C D) (E F)))
+(B D F)
+> (apply-to-all-1 #'iota (iota 5))
+((1) (1 2) (1 2 3) (1 2 3 4) (1 2 3 4 5))
+
+;; mapcar which accepts 2 list arguments ;;
+(defun apply-to-all-2 (fun lst1 lst2))
+; demo
+> (apply-to-all-2 #'expt '(1 2 3 4 5) '(2 2 2 2 2))
+(1 4 9 16 25)
+> (apply-to-all-2 #'list '(a b c d) '(1 2 3 4))
+((A 1) (B 2) (C 3) (D 4))
+> (apply-to-all-2 #'cons '(a b c d) '(1 2 3 4))
+((A . 1) (B . 2) (C . 3) (D . 4))
+{% endhighlight %}
+
+In general, we use `mapcar`.
