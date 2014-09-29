@@ -428,3 +428,41 @@ NIL
 {% endhighlight %}
 
 In general, we use `mapcar`.
+
+`mapcar`:
+
+- takes
+    - a function of `N` arguments
+    - `N` lists of equal lengths
+- applies the function to each of the
+    - first elements of the lists
+    - second elements of the lists
+    - ...
+    - last elements of the lists
+- returns a list of the values computed
+
+{% highlight cl %}
+[1]> (mapcar #'- '(1 2 3))
+(-1 -2 -3)
+[2]> (mapcar #'- '(1 2 3) '(4 5 6))
+(-3 -3 -3)
+[3]> (mapcar #'- '(1 2 3) '(4 5 6) '(7 8 9))
+(-10 -11 -12)
+{% endhighlight %}
+
+**Association Lists**
+
+An association list (`a-list`) is a list of cons-cell objects, each of which
+represents a key/datum pair by means of its `car` and its `cdr` -- or by means
+of its `cdr` and its `car` ... depending on how you look at it.
+
+Remark: The function `mapcar` provides a nice mechanism for constructing
+`a-list`s. The functions `assoc` and `rassoc` are nice functions for
+referencing data in `a-lists`.
+
+Notes:
+
+1) The functions `assoc` and `rassoc` make use of the function `eq` by default.
+
+2) In real applications with large data sets you tend to use hash tables
+   rather than `a-lists`.

@@ -41,3 +41,14 @@
      ((eq suit 'queen) 2)
      ((eq suit 'jack)  1)
      (T                0))))
+
+;; second session
+
+(defconstant *suits* '(club diamond heart spade))
+(defconstant *ranks* '(10 jack queen king ace))
+
+(defun new-suit (s)
+  (mapcar #'list *ranks* (make-list 5 :initial-element s)))
+
+(defun new-deck ()
+  (mapcan #'new-suit *suits*))

@@ -1,0 +1,25 @@
+[1]> (make-list 4 :initial-element 'noomi)
+(NOOMI NOOMI NOOMI NOOMI)
+[2]> (load "cards.l")
+;; Loading file cards.l ...
+;; Loaded file cards.l
+T
+[3]> (mapcar #'list *ranks* (make-list 5 :initial-element 'club))
+((10 CLUB) (JACK CLUB) (QUEEN CLUB) (KING CLUB) (ACE CLUB))
+[4]> (mapcar #'list *ranks* (make-list 5 :initial-element 'diamond))
+((10 DIAMOND) (JACK DIAMOND) (QUEEN DIAMOND) (KING DIAMOND) (ACE DIAMOND))
+[5]> (new-suit 'club)
+((10 CLUB) (JACK CLUB) (QUEEN CLUB) (KING CLUB) (ACE CLUB))
+[6]> (new-suit 'diamond)
+((10 DIAMOND) (JACK DIAMOND) (QUEEN DIAMOND) (KING DIAMOND) (ACE DIAMOND))
+[7]> (new-suit 'heart)
+((10 HEART) (JACK HEART) (QUEEN HEART) (KING HEART) (ACE HEART))
+[8]> (new-suit 'spade)
+((10 SPADE) (JACK SPADE) (QUEEN SPADE) (KING SPADE) (ACE SPADE))
+[9]> (new-deck)
+((10 CLUB) (JACK CLUB) (QUEEN CLUB) (KING CLUB) (ACE CLUB) (10 DIAMOND)
+ (JACK DIAMOND) (QUEEN DIAMOND) (KING DIAMOND) (ACE DIAMOND) (10 HEART)
+ (JACK HEART) (QUEEN HEART) (KING HEART) (ACE HEART) (10 SPADE) (JACK SPADE)
+ (QUEEN SPADE) (KING SPADE) (ACE SPADE))
+[10]> (bye)
+Bye.
