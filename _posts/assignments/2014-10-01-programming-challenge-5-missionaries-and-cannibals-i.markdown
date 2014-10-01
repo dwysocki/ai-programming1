@@ -5,7 +5,6 @@ title: "Programming Challenge #5 - \"Missionaries & Cannibals I\""
 date: 2014-10-01T09:10:00-04:00
 ---
 
-
 # Solution
 
 {% highlight cl %}
