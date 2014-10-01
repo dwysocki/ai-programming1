@@ -466,3 +466,15 @@ Notes:
 
 2) In real applications with large data sets you tend to use hash tables
    rather than `a-lists`.
+
+**Property Lists**
+
+A property list or `p-list` is a simply a list of pairs associated with
+a symbol.
+
+Functions that tend to be used for `p-list` processing:
+
+- `get`
+    - satan's evil transmutation function (`setf`)
+- `symbol-plist`
+- `remprop`
