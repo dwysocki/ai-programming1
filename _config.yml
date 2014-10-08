@@ -4,8 +4,8 @@ email: dwysocki@oswego.edu
 description: >
   Dan Wysocki's course page for the Fall 2014 section of
   AI Programming I (CSC416).
-baseurl: "/ai-programming1" # the subpath of your site, e.g. /blog/
-url: "http://dwysocki.github.io/ai-programming1/"
+baseurl: "/csc416" # the subpath of your site, e.g. /blog/
+url: "http://dwysocki.github.io/csc416/"
 github_username: dwysocki
 
 # Build settings
