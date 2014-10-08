@@ -478,3 +478,70 @@ Functions that tend to be used for `p-list` processing:
     - satan's evil transmutation function (`setf`)
 - `symbol-plist`
 - `remprop`
+
+**State Spaces**
+
+An *object* is a set of properties together with a set of behaviors.
+
+The *state of an object* is a set of bindings for the properties of the object.
+
+A *world* is a collection of objects.
+
+The *state of a world* is a set of bindings for all of the objects in the
+world.
+
+The *state space of an object* is the set of all possible sets of bindings for
+the properties of the object.
+
+The *state space of a world* is the set of all possible sets of bindings for
+all of the all of the objects in the world.
+
+A *state space operator* is an operator that maps one state of the world to
+another state.
+
+A *state space program description* is a triple consisting of
+
+1. `I`: a set of initial states
+2. `G`: a set of goal states
+3. `O`: a set of state spaces operators
+
+All in the context of `S`, some state space that fits the program.
+
+A *state space problem solution* is a triple consisting of
+
+1. `i`: one of the initial states in `I`
+2. `g`: one of the goal states in `G`
+3. `x`: a finite sequence of state space operators that transforms `i` into `g`
+
+A *state space search* is the problem of finding a sequence of state space
+operators that transforms an initial state into a goal state.
+
+Example:
+Three coins problem
+
+Statement:
+Given three coins arranged `(T T H)`, make them all the same in exactly three
+moves, where a move amounts to turning a coin over.
+
+Objects of "the" state space:
+
+The state space will consist of four objects, each with just one property
+
+- coin `L` (leftmost coin):
+with one property -- its top face
+(which will have either `T` or `H` for its value)
+- coin `C` (centermost coin)
+- coin `R` (rightmost coin)
+- counter `V`, which takes on non-negative values
+
+Representation of a state:
+
+We will represent in the form `<LCR V>`, where each of `L`, `C`, and `R` is
+either `T` or `H`, and `V` is a non-negative integer.
+
+- initial state set: `I = { <TTH 0> }`
+- state space operators: `O = { OL, OC, OR }`
+    - `OL = <LCR V> -> <L'CR V+1>`
+    - `OC = <LCR V> -> <LC'R V+1>`
+    - `OR = <LCR V> -> <LCR' V+1>`
+- goal state set: `G = { <TTT 3>, <HHH 3> }`

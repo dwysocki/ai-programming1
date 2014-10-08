@@ -1,0 +1,15 @@
+/* state space graph for the 3 coins problem */
+digraph threecoins {
+  rankdir = "TB";
+
+  "<TTH 0>";
+  "<HTH 1>";
+  "<THH 1>";
+  "<TTT 1>";
+
+
+
+  "<TTH 0>" -> "<HTH 1>" [
+    label = "OR"
+  ]
+}
