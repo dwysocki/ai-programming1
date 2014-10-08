@@ -545,3 +545,78 @@ either `T` or `H`, and `V` is a non-negative integer.
     - `OC = <LCR V> -> <LC'R V+1>`
     - `OR = <LCR V> -> <LCR' V+1>`
 - goal state set: `G = { <TTT 3>, <HHH 3> }`
+
+![3 coin problem](
+  {{ site.baseurl }}/note_data/graphviz/state_space_3coins.svg)
+
+**State Space Search**
+
+Two basic forms
+
+- Breadth-first search (BFS)
+- Depth-first search (DFS)
+
+Implementation idea
+
+In either case, the idea is to maintain two lists of noes, an unexplored lists,
+which nodes not yet examined are placed and an explored list, on which nodes
+that have been examined are placed.
+
+To find a solution `(i, g, x)` to a state space problem defined by `(I, G, O)`
+do...
+
+- establish a list of unexplored nodes called `unexplored`, and place all of
+  the initial states on it.
+- establish a list, called `explored` and bind it to the empty list.
+- perform the following iteration:
+
+~~~
+repeat
+if (UNEXPLORED is empty) then
+    report "NO SOLUTION"
+    BREAK
+end
+
+bind ESTATE to the next UNEXPLORED state
+
+if (ESTATE has been explored) then
+    CONTINUE
+else if (ESTATE is the goal) then
+    report "SOLUTION FOUND"
+    return ESTATE
+else
+    generate the children of ESTATE, and call them KIDS
+    place kids on UNEXPLORED
+    place ESTATE on EXPLORED
+end
+~~~
+
+Prior to iterating:
+
+- `e` - `nil`
+- `c` - `nil`
+- `u` - `(<TTH 0>)`
+- `x` - `nil`
+
+After 1 pass:
+
+- `e` - `<TTH 0>`
+- `c` - `(<HTH 1>, <TTH 1>, <TTT 1>)`
+- `u` - `(<HTH 1>, <TTH 1>, <TTT 1>)`
+- `x` - `(<TTH 0>)`
+
+After 2 passes:
+
+- `e` - `<HTH 1>`
+- `c` - `(<HHH 2>, <THH 2>, <HTT 2>)`
+- `u` - `(<TTH 1>, <TTT 1>, <HHH 2>, <THH 2>, <HTT 2>)`
+- `x` - `(<TTH 0>, <HTH 1>)`
+
+
+# BFS vs DFS (implementation)
+
+*Breadth-first search* is implemented by maintaining *unexplored* as a *queue*
+(first in, first out list, or FIFO).
+
+*Depth-first search* is implemented by maintaining *unexplored* as a *stack*
+(last in first out list, or LIFO).

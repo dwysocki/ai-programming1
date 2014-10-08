@@ -2,14 +2,68 @@
 digraph threecoins {
   rankdir = "TB";
 
-  "<TTH 0>";
-  "<HTH 1>";
-  "<THH 1>";
-  "<TTT 1>";
-
+  "<TTT 3>" [
+    color = red
+  ];
 
 
   "<TTH 0>" -> "<HTH 1>" [
+    label = "OL"
+  ]
+  "<TTH 0>" -> "<THH 1>" [
+    label = "OC"
+  ]
+  "<TTH 0>" -> "<TTT 1>" [
     label = "OR"
+  ]
+
+
+  "<HTH 1>" -> "<TTH 2>" [
+    label = "OL"
+  ]
+  "<HTH 1>" -> "<HHH 2>" [
+    label = "OC"
+  ]
+  "<HTH 1>" -> "<HTT 2>" [
+    label = "OR"
+  ]
+
+  "<THH 1>" -> "<HHH 2>" [
+    label = "OL"
+  ]
+  "<THH 1>" -> "<TTH 2>" [
+    label = "OC"
+  ]
+  "<THH 1>" -> "<THT 2>" [
+    label = "OR"
+  ]
+
+  "<TTT 1>" -> "<HTT 2>" [
+    label = "OL"
+  ]
+  "<TTT 1>" -> "<THT 2>" [
+    label = "OC"
+  ]
+  "<TTT 1>" -> "<TTH 2>" [
+    label = "OR"
+  ]
+
+
+  "<TTH 2>" -> "<HTH 3>" [
+    label = "OL"
+  ]
+  "<TTH 2>" -> "<THH 3>" [
+    label = "OC"
+  ]
+  "<TTH 2>" -> "<TTT 3>" [
+    label = "OR"
+  ]
+
+  "<HTT 2>" -> "<TTT 3>" [
+    label = "OL"
+  ]
+
+  "<THT 2>" -> "<TTT 3>" [
+    label = "OC"
   ]
 }
