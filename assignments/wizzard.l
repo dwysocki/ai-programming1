@@ -26,7 +26,7 @@
 (defun inventory ()
   (let ((inventory (get 'you 'objects)))
     (if (null inventory)
-      (print "YOU ARE CARRYING NOTHING AT ALL")
+      (format t "YOU ARE CARRYING NOTHING AT ALL")
       (format t "YOU ARE CARRYING ~{THE ~A~^ AND ~}" inventory))))
 
 (defun walk (direction)
@@ -110,9 +110,8 @@
 (defun dw ()
   "Display World"
   (doseq (thing '(living-room garden attic you))
-         (print thing)
-         (print (symbol-plist thing)))
-  (format t "~%~%")
+         (format t "~A~%" thing)
+         (format t "~A~%~%" (symbol-plist thing)))
   NIL)
 
 (defun describe-location (location)
@@ -145,3 +144,8 @@
 
 (defun print-list (list)
   (format t "~{~a~^ ~}~%" list))
+
+
+
+;; RUNTIME ;;
+(init-world)
