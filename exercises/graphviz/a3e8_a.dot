@@ -1,0 +1,43 @@
+digraph maze {
+  rankdir = TB;
+
+  "Start" -> "A" [
+    color = red;
+  ];
+
+  "Start" -> "B" [
+    color = orange;
+  ];
+
+  "B" -> "C" [
+    color = red;
+  ];
+
+  "C" -> "F" [
+    color = red;
+  ];
+
+  "F" -> "G" [
+    color = red;
+  ];
+
+  "G" -> "I" [
+    color = red;
+  ];
+
+  "G" -> "J" [
+    color = orange;
+  ];
+
+  "J" -> "K" [
+    color = red;
+  ];
+
+  "J" -> "L" [
+    color = orange;
+  ];
+
+  "L" -> "Goal" [
+    color = red;
+  ];
+}

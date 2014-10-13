@@ -3,7 +3,9 @@ title: "AI Programming (CSC416) - Textbook Assignment #3"
 author: "Dan Wysocki"
 
 output:
-  pdf_document
+  pdf_document:
+    includes:
+      in_header: a2header.tex
 ---
 
 Chapter 3 deals mainly with informed search methods, greedy algorithms, and
@@ -210,16 +212,30 @@ chess, or real world AI.
 8. **Develop an admissible heuristic to solve the Maze Problem from Chapter 2
    (Exercise 13).**
 
-    One thing to note about the maze is that the start is at the bottom of the
-    maze, and the goal is at the top. If we define $x$ to be the vertical
-    distance travelled, and $H$ to be the height of the maze, then an
-    admissible heuristic to solve the maze would be $h(x) = H - x$. This means
-    that the higher we are vertically, the closer our heuristic measure is
-    from the goal.
+    The most obvious admissible heuristic to use is the Euclidean distance, or
+    "ordinary" distance to the goal. This is the distance which assumes one can
+    travel in a straight line to the goal, despite it not always being
+    possible. So if $\vec{r}$ is the separation vector between the player and
+    the goal, the magnitude of that vector
+    $|\vec{r}| = \sqrt{r_x^2 + r_y^2}$
+    is the euclidean distance to the goal. The heuristic would be defined as
+    $h(\vec{r}) = |\vec{r}|$.
 
     a. **Employ your heuristic to conduct an A* search to solve this problem.**
 
-        ...
+        First I have labeled all forks in the maze with the letters A-L.
+
+        ![](img/ch2maze-labeled.png)
+
+        Using an A* search with my heuristic, the paths chosen are described by
+        the following graph. Note that if 2 nodes are at the same depth, they
+        are visited in an order which follows the colors of the rainbow, so red
+        is visited first, then orange, and so on.
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.5\textwidth]{img/a3e8_a.eps}
+        \end{figure}
 
 \setcounter{enumi}{11}
 
