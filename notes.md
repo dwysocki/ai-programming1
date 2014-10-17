@@ -620,3 +620,112 @@ After 2 passes:
 
 *Depth-first search* is implemented by maintaining *unexplored* as a *stack*
 (last in first out list, or LIFO).
+
+# The Water Jug Problem
+
+A simple instance...
+
+You have a sink, with an unlimited supply of water.
+You have two unmarked jugs, a 4-gallon jug, and a 3-gallon jug.
+How can you get exactly two gallons in the four gallon jug?
+
+Solution:
+
+- fill 3 gallon jug with sink
+- empty 3 gallon jug into 4 gallon jug
+- fill 3 gallon jug with sink
+- fill 4 gallon jug with 3 gallon jug
+- empty 4 gallon jug into sink
+- empty 3 gallon jug into 4 gallon jug
+
+State space representation of the water jug problem.
+
+Let `x` represent the number of gallons in the 4-gallon jug.
+Let `y` represent the number of gallons in the 3-gallon jug.
+
+The state space points:
+`{ (x, y) | x ϵ { 0, 1, 2, 3, 4 } and y ϵ { 0, 1, 2, 3 } }`.
+
+Initial state set:
+`{ (0, 0) }`
+
+Goal state set:
+`{ (2, 0), (2, 1), (2, 2), (2, 3) }`
+
+Operations:
+
+1. Fill jug one:
+
+   `(x, y) | x < 4 -> (4, y)`
+2. Fill jug two:
+
+   `(x, y) | y < 3 -> (x, 3)`
+3. Empty jug one:
+
+   `(x, y) | x > 0 -> (0, y)`
+4. Empty jug two:
+
+   `(x, y) | y > 0 -> (x, 0)`
+5. Pour from jug two to fill jug one:
+
+   `(x, y) | x + y >= 4 and x < 4 and y > 0 -> (4, y-(4-x))`
+6. Pour from jug one to fill jug two:
+
+   `(x, y) | x + y >= 3 and x > 0 and y < 3 -> (x-(3-y), 3)`
+7. Dump from jug two into jug one:
+
+   `(x, y) | x < 4 and y > 0 -> (x+y, 0)`
+8. Dump from jug one into jug two:
+
+   `(x, y) | x > 0 and y < 3 -> (0, x+y)`
+
+I like to think of there being 2 general functions:
+
+1. `fillFrom(x, y)`,
+   where `x,y` can be either jug, and `y` can also be the sink
+
+2. `emptyInto(x, y)`,
+   where `x,y` can be either jug, and `x` can also be the sink
+
+**CLOS**
+
+The Common Lisp Object System.
+
+Modelling a coin.
+
+{% highlight cl %}
+(defclass coin ()
+  ((face    :accessor coin-face    :initarg :face :initform 'h)
+   (history :accessor coin-history                :initform ())))
+
+(defmethod display ((c coin))
+  (format t "[~A,~A]"
+    (write-to-string (coin-face    c))
+    (write-to-string (coin-history c))))
+
+(defmethod to-string ((c coin))
+  (format nil "[~A,~A]"
+    (write-to-string (coin-face    c))
+    (write-to-string (coin-history c))))
+
+(defmethod flip ((c coin))
+  (setf (coin-face c)
+        (nth (random 2) '(h t)))
+  (setf (coin-history c)
+        (append (coin-history c) (list (coin-face c))))
+  nil)
+
+(defmethod turn ((c coin))
+  (if (eq (coin-face c) 't)
+    (setf (coin-face c) 'h)
+    (setf (coin-face c) 't))
+  (setf (coin-history c)
+        (append (coin-history c) (list (coin-face c))))
+
+  nil)
+
+(defmethod forget ((c coin))
+  (setf (coin-history c) ()))
+
+
+{% endhighlight %}
