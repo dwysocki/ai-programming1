@@ -727,5 +727,43 @@ Modelling a coin.
 (defmethod forget ((c coin))
   (setf (coin-history c) ()))
 
+(defmethod flip-for-h ((c coin))
+  (flip c)
+  (when (not (eq (coin-face c) 'h))
+    (flip-for-h c)))
 
+(defmethod flip-for-hh ((c coin))
+  (flip-for-h c)
+  (flip c)
+  (when (not (eq (coin-face c) 'h))
+    (flip-for-hh c)))
+
+(defmethod flip-for-hhh ((c coin))
+  (flip-for-hh c)
+  (flip c)
+  (when (not (eq (coin-face c) 'h))
+    (flip-for-hhh c)))
+
+(defmethod flip-for-n-h ((c coin) (n integer))
+  (if (= n 1)
+    (flip-for-h c)
+    (progn
+      (flip-for-n-h c (1- n))
+      (flip c)
+      (when (not (eq (coin-face c) 'h))
+        (flip-for-n-h c n)))))
+
+(defun times-to-h ()
+  (let ((c (make-instance 'coin)))
+    (flip-for-h c)
+    (length (coin-history c))))
+
+(defun times-to-h-iter (i acc)
+  (if (> i 0)
+    (times-to-h-iter (1- i) (+ acc (times-to-h)))
+    acc))
+
+(defun times-to-h-avg (N)
+  (/ (times-to-h-iter N 0)
+     N))
 {% endhighlight %}
