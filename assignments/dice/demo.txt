@@ -1,0 +1,26 @@
+[1]> (load "probability.l")
+;; (a) How many times until a pair on 2 standard dice?
+[2]> (pair-times 1000 6 6)
+"mean=5.932, sdm=0.16876426"
+;; (b) How many times until a pair on one 3 and one 12 sided die?
+[3]> (pair-times 1000 3 12)
+"mean=11.746, sdm=0.35330933"
+;; (c) How many times until a sum of 7 on 2 standard dice?
+[4]> (sum-times 1000 6 6 7)
+"mean=5.783, sdm=0.1591663"
+;; (d) How many times until a sum of 7 on one 3 and one 12 sided die?
+[5]> (sum-times 1000 3 12 7)
+"mean=12.288, sdm=0.37446368"
+;; (e) How many times until a sum of 11 on 2 standard dice?
+[6]> (sum-times 1000 6 6 11)
+"mean=18.296, sdm=0.554372"
+;; (f) How many times until a sum of 11 on one 3 and one 12 sided die?
+[7]> (sum-times 1000 3 12 11)
+"mean=11.737, sdm=0.36420026"
+;; (g) How many times until "7, 11, or doubles" on 2 standard dice?
+[8]> (sums-pair-times 1000 6 6 '(7 11))
+"mean=2.761, sdm=0.065359615"
+;; (h) How many times until "7, 11, or doubles" on one 3 and one 12 sided die?
+[9]> (sums-pair-times 1000 3 12 '(7 11))
+"mean=3.951, sdm=0.11342222"
+[10]> (bye)
