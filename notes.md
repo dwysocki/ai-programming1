@@ -767,3 +767,20 @@ Modelling a coin.
   (/ (times-to-h-iter N 0)
      N))
 {% endhighlight %}
+
+## Genetic Algorithms
+
+A *Darwinian process* is a process involving replication, selection, and
+variation.
+
+*Universal Darwinism* is simply the idea that Darwinian processes
+explain/create a wide range of phenomena.
+
+*Evolutionary programming* is a style of computer programming inspired by
+Darwin's theory of evolution by natural selection.
+
+A *genetic algorithm* is an evolutionary program in which individuals are data
+structures of some sort.
+
+A *genetic program* is an evolutionary program in which individuals are
+computer programs of some sort.
