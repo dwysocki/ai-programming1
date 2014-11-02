@@ -1,9 +1,66 @@
 (load "classes.l")
 
+(defvar *tracing-search* nil)
+
 (defun mc ()
   (establish-operators)
   (setup)
   (solve))
+
+(defun establish-operators ()
+  (setf *m->lb*
+    (make-instance 'operator
+      :name 'm->lb
+      :precondition "missionary & boat on right bank"
+      :description "move missionary from right bank to left"))
+  (setf *m->rb*
+    (make-instance 'operator
+      :name 'm->rb
+      :precondition "missionary & boat on left bank"
+      :description "move missionary from left bank to right"))
+  (setf *c->lb*
+    (make-instance 'operator
+      :name 'c->lb
+      :precondition "cannibal & boat on right bank"
+      :description "move cannibal from right bank to left"))
+  (setf *c->rb*
+    (make-instance 'operator
+      :name 'c->rb
+      :precondition "cannibal & boat on left bank"
+      :description "move cannibal from left bank to right"))
+  (setf *mm->lb*
+    (make-instance 'operator
+      :name 'mm->lb
+      :precondition "two missionaries & boat on right bank"
+      :description "move two missionaries from right bank to left"))
+  (setf *mm->rb*
+    (make-instance 'operator
+      :name 'mm->rb
+      :precondition "two missionaries & boat on left bank"
+      :description "move two missionaries from left bank to right"))
+  (setf *cc->lb*
+    (make-instance 'operator
+      :name 'cc->lb
+      :precondition "two cannibals & boat on right bank"
+      :description "move two cannibals from right bank to left"))
+  (setf *cc->rb*
+    (make-instance 'operator
+      :name 'cc->rb
+      :precondition "two cannibals & boat on left bank"
+      :description "move two cannibals from left bank to right"))
+  (setf *mc->lb*
+    (make-instance 'operator
+      :name 'mc->lb
+      :precondition "missionary, cannibal, & boat on right bank"
+      :description "move missionary & cannibal from right bank to left"))
+  (setf *mc->rb*
+    (make-instance 'operator
+      :name 'mc->rb
+      :precondition "missionary, cannibal, & boat on left bank"
+      :description "move missionary & cannibal from right bank to left"))
+  (list *m->lb*  *m->rb*  *c->lb*  *c->rb*
+        *mm->lb* *mm->rb* *cc->lb* *cc->rb* *mc->lb* *mc->rb*)
+  nil)
 
 (defun setup ()
   (let* ((lb   (make-instance 'bank
@@ -50,10 +107,32 @@
           (solve))))))
   nil)
 
-(defmethod children-of ((e-node node))
-  ;...;
-  )
+(defmethod children-of ((e-node node) &aux kids)
+  (when (applicablep *m->lb* e-node)
+    (push (child-of e-node *m->lb*) kids))
+  (when (applicablep *m->rb* e-node)
+    (push (child-of e-node *m->rb*) kids))
+  (when (applicablep *c->lb* e-node)
+    (push (child-of e-node *c->lb) kids))
+  (when (applicablep *c->rb* e-node)
+    (push (child-of e-node *c->rb) kids))
+  (when (applicablep *mm->lb* e-node)
+    (push (child-of e-node *mm->lb*) kids))
+  (when (applicablep *mm->rb* e-node)
+    (push (child-of e-node *mm->rb*) kids))
+  (when (applicablep *cc->lb* e-node)
+    (push (child-of e-node *cc->lb*) kids))
+  (when (applicablep *cc->rb* e-node)
+    (push (child-of e-node *cc->rb*) kids))
+  (when (applicablep *mc->lb* e-node)
+    (push (child-of e-node *mc->lb*) kids))
+  (when (applicablep *mc->rb* e-node)
+    (push (child-of e-node *mc->rb*) kids))
 
+  kids)
+
+
+;; COMPLETE THIS ;;
 (defmethod child-of ((n node) (o operator))
   (let ((new-node (make-instance 'node)))
     (setf (node-name new-node) (next *ng*))
@@ -63,3 +142,96 @@
       (apply-operator o c)
       (setf (node-state new-node) c)
       new-node)))
+
+;;;; PREDICATES
+
+(defmethod rootp ((s state))
+  (eq (state-name s) 'root))
+
+(defmethod goalp ((s state))
+  (and (left-bank-ok-p  (state-left-bank  s))
+       (right-bank-ok-p (state-right-bank s))))
+
+(defmethod left-bank-ok-p ((b bank))
+  (and (= 0 (missionary-count b)
+            (cannibal-count b))
+       (not (bank-boat b))))
+
+(defmethod right-bank-ok-p ((b bank))
+  (and (= 3 (missionary-count b)
+            (cannibal-count b))
+       (bank-boat b)))
+
+(defmethod exploredp ((n node))
+  (member-node-p n *explored*))
+
+(defmethod member-node-p ((n node) (l list))
+  (cond
+   ((null l)
+    nil)
+
+   ((equal-node-p n (first l))
+    t)
+
+   (T
+    (member-node-p n (rest l)))))
+
+(defmethod equal-node-p ((n1 node) (n2 node))
+  (let ((s1 (node-state n1))
+        (s2 (node-state n2)))
+    (and (equal-bank-p (state-left-bank  s1) (state-left-bank  s2))
+         (equal-bank-p (state-right-bank s1) (state-right-bank s2)))))
+
+(defmethod applicablep ((op operator) (n node))
+  (let ((s (node-state n)))
+   (case (operator-name op)
+     'm->lb (applicable-m->lb-p   s)
+     'm->rb (applicable-m->rb-p   s)
+     'c->lb (applicable-c->lb-p   s)
+     'c->rb (applicable-c->rb-p   s)
+     'mm->lb (applicable-mm->lb-p s)
+     'mm->rb (applicable-mm->rb-p s)
+     'cc->lb (applicable-cc->lb-p s)
+     'cc->rb (applicable-cc->rb-p s)
+     'mc->lb (applicable-mc->lb-p s)
+     'mc->rb (applicable-mc->rb-p s))))
+
+(defmethod applicable-m->lb-p ((s state))
+  (and (<= 1 (missionary-count (state-right-bank s)))
+       (bank-boat (state-right-bank s))))
+
+(defmethod applicable-m->rb-p ((s state))
+  (and (<= 1 (missionary-count (state-left-bank s)))
+       (bank-boat (state-left-bank s))))
+
+(defmethod applicable-c->lb-p ((s state))
+  (and (<= 1 (cannibal-count (state-right-bank s)))
+       (bank-boat (state-right-bank s))))
+
+(defmethod applicable-c->rb-p ((s state))
+  (and (<= 1 (cannibal-count (state-left-bank s)))
+       (bank-boat (state-left-bank s))))
+
+(defmethod applicable-mm->lb-p ((s state))
+  (and (<= 2 (missionary-count (state-right-bank s)))
+       (bank-boat (state-right-bank s))))
+
+(defmethod applicable-mm->rb-p ((s state))
+  (and (<= 2 (missionary-count (state-left-bank s)))
+       (bank-boat (state-left-bank s))))
+
+(defmethod applicable-cc->lb-p ((s state))
+  (and (<= 2 (cannibal-count (state-right-bank s)))
+       (bank-boat (state-right-bank s))))
+
+(defmethod applicable-cc->rb-p ((s state))
+  (and (<= 2 (cannibal-count (state-left-bank s)))
+       (bank-boat (state-left-bank s))))
+
+(defmethod applicable-mc->lb-p ((s state))
+  (and (applicable-m->lb-p s)
+       (applicable-c->lb-p s)))
+
+(defmethod applicable-mc->rb-p ((s state))
+  (and (applicable-m->rb-p s)
+       (applicable-c->rb-p s)))

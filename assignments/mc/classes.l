@@ -9,6 +9,11 @@
           (bank-cannibals    b)
           (bank-boat         b)))
 
+(defmethod missionary-count ((b bank))
+  (length (bank-missionaries b)))
+
+(defmethod cannibal-count ((b bank))
+  (length (bank-cannibals b)))
 
 
 
@@ -48,3 +53,20 @@
    (precondition :accessor operator-precondition :initarg :precondition)
    (description  :accessor operator-description  :initarg :description)))
 
+
+
+
+
+(defclass name-generator ()
+  ((prefix       :accessor name-generator-prefix :initarg :prefix)
+   (count        :accessor name-generator-count  :initform 0)))
+
+(defmethod inc ((ng name-generator))
+  (setf (name-generator-count)
+        (1+ (name-generator-count))))
+
+(defmethod gen-name ((ng name-generator))
+  (let ((name (format nil "~A-~D" (name-generator-prefix ng)
+                                  (name-generator-count  ng))))
+    (inc ng)
+    name))
