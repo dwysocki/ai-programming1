@@ -1,0 +1,101 @@
+digraph mc {
+  size="10,10"
+  rankdir=TB;
+  node [style=filled];
+
+  "ROOT" [ label=<L = M:3, C:3, B:1<BR/>R = M:0, C:0, B:0>, color="rosybrown" ];
+
+  "N-4" [ label=<L = M:2, C:2, B:0<BR/>R = M:1, C:1, B:1>, color="rosybrown" ];
+  "ROOT" -> "N-4" [ label="MC->RB", color=blue ];
+
+  "N-3" [ label=<L = M:3, C:1, B:0<BR/>R = M:0, C:2, B:1>, color="rosybrown" ];
+  "ROOT" -> "N-3" [ label="CC->RB" ];
+
+  "N-2" [ label=<L = M:1, C:3, B:0<BR/>R = M:2, C:0, B:1>, color="red3" ];
+  "ROOT" -> "N-2" [ label="MM->RB" ];
+
+  "N-1" [ label=<L = M:3, C:2, B:0<BR/>R = M:0, C:1, B:1>, color="rosybrown" ];
+  "ROOT" -> "N-1" [ label="C->RB" ];
+
+  "N-0" [ label=<L = M:2, C:3, B:0<BR/>R = M:1, C:0, B:1>, color="red3" ];
+  "ROOT" -> "N-0" [ label="M->RB" ];
+
+  "N-6" [ label=<L = M:2, C:3, B:1<BR/>R = M:1, C:0, B:0>, color="red3" ];
+  "N-4" -> "N-6" [ label="C->LB" ];
+
+  "N-5" [ label=<L = M:3, C:2, B:1<BR/>R = M:0, C:1, B:0>, color="rosybrown" ];
+  "N-4" -> "N-5" [ label="M->LB", color=blue ];
+
+  "N-15" [ label=<L = M:2, C:1, B:0<BR/>R = M:1, C:2, B:1>, color="red3" ];
+  "N-5" -> "N-15" [ label="MC->RB" ];
+
+  "N-14" [ label=<L = M:3, C:0, B:0<BR/>R = M:0, C:3, B:1>, color="rosybrown" ];
+  "N-5" -> "N-14" [ label="CC->RB", color=blue ];
+
+  "N-13" [ label=<L = M:1, C:2, B:0<BR/>R = M:2, C:1, B:1>, color="red3" ];
+  "N-5" -> "N-13" [ label="MM->RB" ];
+
+  "N-16" [ label=<L = M:3, C:1, B:1<BR/>R = M:0, C:2, B:0>, color="rosybrown" ];
+  "N-14" -> "N-16" [ label="C->LB", color=blue ];
+
+  "N-21" [ label=<L = M:2, C:0, B:0<BR/>R = M:1, C:3, B:1>, color="red3" ];
+  "N-16" -> "N-21" [ label="MC->RB" ];
+
+  "N-20" [ label=<L = M:1, C:1, B:0<BR/>R = M:2, C:2, B:1>, color="rosybrown" ];
+  "N-16" -> "N-20" [ label="MM->RB", color=blue ];
+
+  "N-18" [ label=<L = M:2, C:1, B:0<BR/>R = M:1, C:2, B:1>, color="red3" ];
+  "N-16" -> "N-18" [ label="M->RB" ];
+
+  "N-26" [ label=<L = M:2, C:2, B:1<BR/>R = M:1, C:1, B:0>, color="rosybrown" ];
+  "N-20" -> "N-26" [ label="MC->LB", color=blue ];
+
+  "N-25" [ label=<L = M:1, C:3, B:1<BR/>R = M:2, C:0, B:0>, color="red3" ];
+  "N-20" -> "N-25" [ label="CC->LB" ];
+
+  "N-23" [ label=<L = M:1, C:2, B:1<BR/>R = M:2, C:1, B:0>, color="red3" ];
+  "N-20" -> "N-23" [ label="C->LB" ];
+
+  "N-22" [ label=<L = M:2, C:1, B:1<BR/>R = M:1, C:2, B:0>, color="red3" ];
+  "N-20" -> "N-22" [ label="M->LB" ];
+
+  "N-30" [ label=<L = M:2, C:0, B:0<BR/>R = M:1, C:3, B:1>, color="red3" ];
+  "N-26" -> "N-30" [ label="CC->RB" ];
+
+  "N-29" [ label=<L = M:0, C:2, B:0<BR/>R = M:3, C:1, B:1>, color="rosybrown" ];
+  "N-26" -> "N-29" [ label="MM->RB", color=blue ];
+
+  "N-28" [ label=<L = M:2, C:1, B:0<BR/>R = M:1, C:2, B:1>, color="red3" ];
+  "N-26" -> "N-28" [ label="C->RB" ];
+
+  "N-27" [ label=<L = M:1, C:2, B:0<BR/>R = M:2, C:1, B:1>, color="red3" ];
+  "N-26" -> "N-27" [ label="M->RB" ];
+
+  "N-35" [ label=<L = M:1, C:3, B:1<BR/>R = M:2, C:0, B:0>, color="red3" ];
+  "N-29" -> "N-35" [ label="MC->LB" ];
+
+  "N-33" [ label=<L = M:0, C:3, B:1<BR/>R = M:3, C:0, B:0>, color="rosybrown" ];
+  "N-29" -> "N-33" [ label="C->LB", color=blue ];
+
+  "N-32" [ label=<L = M:1, C:2, B:1<BR/>R = M:2, C:1, B:0>, color="red3" ];
+  "N-29" -> "N-32" [ label="M->LB" ];
+
+  "N-37" [ label=<L = M:0, C:1, B:0<BR/>R = M:3, C:2, B:1>, color="rosybrown" ];
+  "N-33" -> "N-37" [ label="CC->RB", color=blue ];
+
+  "N-42" [ label=<L = M:1, C:2, B:1<BR/>R = M:2, C:1, B:0>, color="red3" ];
+  "N-37" -> "N-42" [ label="MC->LB" ];
+
+  "N-40" [ label=<L = M:2, C:1, B:1<BR/>R = M:1, C:2, B:0>, color="red3" ];
+  "N-37" -> "N-40" [ label="MM->LB" ];
+
+  "N-39" [ label=<L = M:0, C:2, B:1<BR/>R = M:3, C:1, B:0>, color="rosybrown" ];
+  "N-37" -> "N-39" [ label="C->LB", color=blue ];
+
+  "N-38" [ label=<L = M:1, C:1, B:1<BR/>R = M:2, C:2, B:0>, color="rosybrown" ];
+  "N-37" -> "N-38" [ label="M->LB" ];
+
+  "N-44" [ label=<L = M:0, C:0, B:0<BR/>R = M:3, C:3, B:1>, color="royalblue" ];
+  "N-39" -> "N-44" [ label="CC->RB", color=blue ];
+
+}
