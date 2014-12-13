@@ -1,0 +1,80 @@
+[1]> (defun f (x) x)
+F
+[2]> (symbol-function #'f)
+
+*** - SYMBOL-FUNCTION:
+      #<FUNCTION F (X) (DECLARE (SYSTEM::IN-DEFUN F)) (BLOCK F X)> is not a
+      symbol
+The following restarts are available:
+USE-VALUE      :R1      Input a value to be used instead.
+ABORT          :R2      Abort main loop
+Break 1 [3]> (symbol-function f)
+
+*** - SYSTEM::READ-EVAL-PRINT: variable F has no value
+The following restarts are available:
+USE-VALUE      :R1      Input a value to be used instead of F.
+STORE-VALUE    :R2      Input a new value for F.
+ABORT          :R3      Abort debug loop
+ABORT          :R4      Abort main loop
+Break 2 [4]> :a
+Break 1 [3]> :a
+[5]> (symbol-function 'f)
+#<FUNCTION F (X) (DECLARE (SYSTEM::IN-DEFUN F)) (BLOCK F X)>
+[6]> (funtion-name #'f)
+
+*** - EVAL: undefined function FUNTION-NAME
+The following restarts are available:
+USE-VALUE      :R1      Input a value to be used instead of (FDEFINITION 'FUNTION-NAME).
+RETRY          :R2      Retry
+STORE-VALUE    :R3      Input a new value for (FDEFINITION 'FUNTION-NAME).
+ABORT          :R4      Abort main loop
+Break 1 [7]> :a
+[8]> (load "fitness-demo.l")
+;; Loading file fitness-demo.l ...
+;;  Loading file rbg.l ...
+;;   Loading file util.l ...
+;;   Loaded file util.l
+;;  Loaded file rbg.l
+;; Loaded file fitness-demo.l
+T
+[9]> (fitness-demo)
+x = (G R B R G G G B R G G B R G R B B G B B R G G G G)
+
+Directly applying the fitness metrics ...
+fitness-r = 6
+fitness-b = 7
+fitness-g = 12
+
+Indirectly applying the fitness metrics ...
+FITNESS-R = 6
+FITNESS-B = 7
+FITNESS-G = 12
+NIL
+[10]> (fitness-demo)
+x = (B B B R R B G G B B R B B G G G B B R B B G B R R)
+
+Directly applying the fitness metrics ...
+fitness-r = 6
+fitness-b = 13
+fitness-g = 6
+
+Indirectly applying the fitness metrics ...
+FITNESS-R = 6
+FITNESS-B = 13
+FITNESS-G = 6
+NIL
+[11]> (fitness-demo)
+x = (R B G R G R B R G G R G G R B B R G R G R R R R G)
+
+Directly applying the fitness metrics ...
+fitness-r = 12
+fitness-b = 4
+fitness-g = 9
+
+Indirectly applying the fitness metrics ...
+FITNESS-R = 12
+FITNESS-B = 4
+FITNESS-G = 9
+NIL
+[12]> (bye)
+Bye.

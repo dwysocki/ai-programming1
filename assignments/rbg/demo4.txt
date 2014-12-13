@@ -1,0 +1,45 @@
+[1]> (load "individual-demo.l")
+;; Loading file individual-demo.l ...
+;;  Loading file rbg.l ...
+;;   Loading file util.l ...
+;;   Loaded file util.l
+;;  Loaded file rbg.l
+;; Loaded file individual-demo.l
+T
+[2]> (setf rbg (rbg-string))
+(B B R G G G G B B B R R B G G B B R B B G G G B B)
+[3]> (setf *fitness* #'fitness-b)
+#<STANDARD-GENERIC-FUNCTION FITNESS-B>
+[4]> (setf rbg-i (new-individual 1 rbg))
+#<INDIVIDUAL #x0003341A5FE0>
+[5]> (individual-number rbg-i)
+1
+[6]> (individual-rbg-string rbg-i)
+(B B R G G G G B B B R R B G G B B R B B G G G B B)
+[7]> (display rbg-i)
+1     (B B R G G G G B B B R R B G G B B R B B G G G B B) 12
+NIL
+[8]> (funcall *fitness* rbg)
+12
+[9]> (setf r (random-individual))
+#<INDIVIDUAL #x0003341DB7B8>
+[10]> (display r)
+0     (R B B G B R R R B G R G R B R G G R G G R B B R G)  7
+NIL
+[11]> (setf r (random-individual))
+#<INDIVIDUAL #x0003341F8918>
+[12]> (display r)
+0     (R G R R R R G R B R G R B R G R G G B G R G G B G)  4
+NIL
+[13]> (individual-demo)
+0     (R G B G R G B G G G R R G G R G G B R B R G B B B)  7
+1     (R R R B G R B G G G G R B G R B R G R B G B G B B)  8
+2     (R B B R R B B G B R R B G G G G R G G B R R B B R)  9
+3     (G G R R R G B R G R R B G R G G R R R B B R G G R) 12
+Fitness of i0 = 7
+Fitness of i1 = 8
+Fitness of i2 = 9
+Fitness of i3 = 12
+NIL
+[14]> (bye)
+Bye.

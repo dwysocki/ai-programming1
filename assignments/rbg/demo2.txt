@@ -1,0 +1,84 @@
+[1]> (load "mutation-demo.l")
+;; Loading file mutation-demo.l ...
+;;  Loading file rbg.l ...
+;;   Loading file util.l ...
+;;   Loaded file util.l
+;;  Loaded file rbg.l
+;; Loaded file mutation-demo.l
+T
+[2]> (mutation-demo)
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G B G B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R R R B R G G G B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G G G B R G G G R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G G B R G G G B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R R G G B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G G G G R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G G G B B G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B G G G G B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G G R B R G G B R G R B B G B B R)
+
+s = (B R G R G R B R G G G B R G G B R G R B B G B B R)
+m = (B R G R G R B R G G G G R G G B R G R B B G B B R)
+
+NIL
+[3]> (crossover-demo)
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B R G R B R G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B R R R G R B R G R B R G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R R G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R R B R G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R B G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R B R G G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G G R B R G R G G B G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R B R G G R G G R B G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R B R G G R G G R G G)
+
+m = (B B R B B G B R R R B G R G R B R G G R G G R B B)
+f = (R G R G R R R R G R B R G R B R G R G G B G R G G)
+x = (B B R B B G B R R R B G R G R B R G G R B G R G G)
+
+NIL
+[4]> (bye)
+Bye.

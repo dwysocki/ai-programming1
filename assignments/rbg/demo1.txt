@@ -1,0 +1,18 @@
+[1]> (load "rbg.l")
+;; Loading file rbg.l ...
+;;  Loading file util.l ...
+;;  Loaded file util.l
+;; Loaded file rbg.l
+T
+[2]> (setf m (rbg-string))
+(R B G R G B R G R G R B R G G G B R G G B R G R B)
+[3]> (setf f (rbg-string))
+(B G B B R G G G G B B B R R B G G B B R B B G G G)
+[4]> (crossover m f)
+(R B G R G B R G G B B B R R B G G B B R B B G G G)
+[5]> (crossover m f)
+(R B G R G B R G R G R B R G B G G B B R B B G G G)
+[6]> (crossover m f)
+(R B G R G B R G R G R B R G G G B R G G B B G G G)
+[7]> (bye)
+Bye.

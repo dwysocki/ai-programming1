@@ -1,0 +1,36 @@
+[1]> (load "rbg.l")
+;; Loading file rbg.l ...
+;;  Loading file util.l ...
+;;  Loaded file util.l
+;; Loaded file rbg.l
+T
+[2]> *limit*
+25
+[3]> (rbg)
+R
+[4]> (rbg)
+G
+[5]> (rbg)
+B
+[6]> (rbg)
+R
+[7]> (rbg)
+G
+[8]> (rbg-string 3)
+(B G R)
+[9]> (rbg-string 4)
+(B B R B)
+[10]> (rbg-string) ;; equivalent to (rbg-string *limit*)
+(G R G B R G R G R B R G G G B R G G B R G R B B G)
+[11]> (rbg-string)
+(B B R G G G G B B B R R B G G B B R B B G G G B B)
+[12]> (setf s (rbg-string))
+(R B B G B R R R B G R G R B R G G R G G R B B R G)
+[13]> (mutation s)
+(R B B G B R R R B G R G R B R R G R G G R B B R G)
+[14]> (mutation s)
+(R B R G B R R R B G R G R B R G G R G G R B B R G)
+[15]> (mutation s)
+(R B B G B R R R B G R G R B R G R R G G R B B R G)
+[16]> (bye)
+Bye.

@@ -1,0 +1,17 @@
+(load "rbg.l")
+
+(defmethod mutate-demo ()
+  (let ((i (random-individual)))
+    (display i)
+    (dotimes (_ 20)
+      (setf i (mutate i))
+      (display i))))
+
+(defmethod maybe-mutate-demo ()
+  (let ((i (random-individual)))
+    (display i)
+    (dotimes (_ 20)
+      (let ((n (maybe-mutate i)))
+        (display n)
+        (when (not (equal n i))
+          (format t "*~%"))))))

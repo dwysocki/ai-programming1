@@ -2,7 +2,7 @@
 layout: post
 category: assignments
 title: "State-Space Problem Solver: Missionaries and Cannibals"
-date: 2014-11-01T13:54:04-05:00
+date: 2014-11-01T09:10:00-05:00
 ---
 
 A solution to the Missionaries and Cannibals problem using a classic

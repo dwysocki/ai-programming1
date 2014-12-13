@@ -1,0 +1,11 @@
+(load "rbg.l")
+
+(defmethod population-demo ()
+  (let ((p (initial-population)))
+    (display p)
+    (format t "Average fitness = ~D~%" (average p))
+    (setf *select-demo* t)
+    (dotimes (_ 3)
+      (format t "~%Sampling ...~%~%")
+      (select-individual p))
+    (format t "~%")))
